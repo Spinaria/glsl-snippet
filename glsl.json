@@ -1,0 +1,1364 @@
+{
+    ///Trigonometry 三角学
+    "acos 反余弦": {
+		"prefix": "acos",
+		"body": [
+			"acos(${1:value})$2"
+		],
+		"description": "genType acos(genType x);\n\n返回x的反余弦值\n\n"
+	},
+
+    "acosh 反双曲余弦": {
+		"prefix": "acosh",
+		"body": [
+			"acosh(${1:value})$2"
+		],
+		"description": "genType acosh(genType x);\n\n返回x的反双曲余弦值\n\n"
+	},
+
+	"asin 反正弦": {
+		"prefix": "asin",
+		"body": [
+			"asin(${1:value})$2"
+		],
+		"description": "genType asin(genType x);\n\n返回x的反正弦值\n\n"
+	},
+
+	"asinh 反双曲正弦": {
+		"prefix": "asinh",
+		"body": [
+			"asinh(${1:value})$2"
+		],
+		"description": "genType asinh(genType x);\n\n返回x的反双曲正弦值\n\n"
+	},
+
+	"atan 反正切": {
+		"prefix": "atan",
+		"body": [
+			"atan(${1:value})$2"
+		],
+		"description": "genType atan(genType x);\n\n返回x的反正切值\n\n"
+	},
+
+	"atanh 反双曲正切": {
+		"prefix": "atanh",
+		"body": [
+			"atanh(${1:value})$2"
+		],
+		"description": "genType atanh(genType x);\n\n返回x的反双曲正切值\n\n"
+	},
+
+	"cos 余弦": {
+		"prefix": "cos",
+		"body": [
+			"cos(${1:angle})$2"
+		],
+		"description": "genType cos(genType angle);\n\n返回angle的余弦值\n\n"
+	},
+
+	"cosh 双曲余弦": {
+		"prefix": "cosh",
+		"body": [
+			"cosh(${1:value})$2"
+		],
+		"description": "genType cosh(genType x);\n\n返回x的双曲余弦值\n\n"
+	},
+
+	"sin 正弦": {
+		"prefix": "sin",
+		"body": [
+			"sin(${1:angle})$2"
+		],
+		"description": "genType sin(genType angle);\n\n返回angle的正弦值\n\n"
+	},
+
+	"sinh 双曲正弦": {
+		"prefix": "sinh",
+		"body": [
+			"sinh(${1:value})$2"
+		],
+		"description": "genType sinh(genType x);\n\n返回x的双曲正弦值\n\n"
+	},
+
+	"tan 正切": {
+		"prefix": "tan",
+		"body": [
+			"tan(${1:angle})$2"
+		],
+		"description": "genType tan(genType angle);\n\n返回angle的正切值\n\n"
+	},
+
+	"tanh 双曲正切": {
+		"prefix": "tanh",
+		"body": [
+			"tanh(${1:value})$2"
+		],
+		"description": "genType tanh(genType x);\n\n返回x的双曲正切值\n\n"
+	},
+
+	"degrees 弧度 -> 角度": {
+		"prefix": "degrees",
+		"body": [
+			"degrees(${1:radians})$2"
+		],
+		"description": "genType degrees(genType radians);\n\n把弧度radians换算成角度degress\n\n"
+	},
+
+	"radians 角度 -> 弧度": {
+		"prefix": "radians",
+		"body": [
+			"radians(${1:degress})$2"
+		],
+		"description": "genType radians(genType degrees);\n\n把角度degress换算成弧度radians\n\n"
+	},
+
+	//Mathematics 数学
+
+	"abs 绝对值": {
+		"prefix": "abs",
+		"body": [
+			"abs(${1:value})$2"
+		],
+		"description": "genType abs(genType x);\ngenIType abs(genIType x);\ngenDType abs(genDType x);\n\n返回x的绝对值\n\n"
+	},
+
+	"ceil 向上取整": {
+		"prefix": "ceil",
+		"body": [
+			"ceil(${1:value})$2"
+		],
+		"description": "genType ceil(genType x);\ngenDType ceil(genDType x);\n\n返回x向上取整的值(大于等于x的整数)\n\n"
+	},
+
+	"clamp 范围约束": {
+		"prefix": "clamp",
+		"body": [
+			"clamp(${1:value}, ${2:minVal}, ${3:maxVal})$4"
+		],
+		"description": "genType clamp(genType x,genType minVal,genType maxVal);\ngenType clamp(genType x,float minVal,float maxVal);\ngenDType clamp(genDType x,genDType minVal,genDType maxVal);\ngenDType clamp(genDType x,double minVal,double maxVal);\ngenIType clamp(genIType x,genIType minVal,genIType maxVal);\ngenIType clamp(genIType x,int minVal,int maxVal);\ngenUType clamp(genUType x,genUType minVal,genUType maxVal);\ngenUType clamp(genUType x,uint minVal,uint maxVal);\n\nx:要钳制的值\nminVal:钳制x的下限\nmaxVal:钳制x的上限\n\n\n钳制x至minVal到maxVal之间\n\n"
+	},
+
+	"dFdx 偏导数x": {
+		"prefix": "dFdx",
+		"body": [
+			"dFdx(${1:value})$2"
+		],
+		"description": "genType dFdx(genType p);\ngenType dFdxCoarse(genType p);\ngenType dFdxFine(genType p);\n\np:关于x的偏导数的参数\n\n\n"
+	},
+
+	"dFdy 偏导数y": {
+		"prefix": "dFdy",
+		"body": [
+			"dFdy(${1:value})$2"
+		],
+		"description": "genType dFdy(genType p);\ngenType dFdyCoarse(genType p);\ngenType dFdyFine(genType p);\n\np:关于y的偏导数的参数\n\n\n"
+	},
+
+	"exp e^x": {
+		"prefix": "exp",
+		"body": [
+			"exp(${1:value})$2"
+		],
+		"description": "genType exp(genType x);\n\n返回自然指数e的x次幂\n\n"
+	},
+
+	"exp2 2^x": {
+		"prefix": "exp2",
+		"body": [
+			"exp2(${1:value})$2"
+		],
+		"description": "genType exp2(genType x);\n\n返回2的x次幂\n\n"
+	},
+
+	"floor 向下取整": {
+		"prefix": "floor",
+		"body": [
+			"floor(${1:value})$2"
+		],
+		"description": "genType floor(genType x);\ngenDType floor(genDType x);\n\n返回x向下取整的值(小于等于x的整数)\n\n"
+	},
+
+	"fma 融合乘加": {
+		"prefix": "fma",
+		"body": [
+			"fma(${1:a}, ${2:b}, ${3:c})$4"
+		],
+		"description": "genType fma(genType a,genType b,genType c);\ngenDType fma(genDType a,genDType b,genDType c);\n\n返回a * b + c\n\n"
+	},
+
+	"fract 取小数": {
+		"prefix": "fract",
+		"body": [
+			"fract(${1:value})$2"
+		],
+		"description": "genType fract(genType x);\ngenDType fract(genDType x);\n\n求x的小数部分,结果在0到1之间\n相当于 x - floor(x)\n\n"
+	},
+
+	"fwidth": {
+		"prefix": "fwidth",
+		"body": [
+			"fwidth(${1:value})$2"
+		],
+		"description": "genType fwidth(genType p);\ngenType fwidthCoarse(genType p);\ngenType fwidthFine(genType p);\n\n仅在片段着色器中可用\n\n"
+	},
+
+	"inversesqrt  平方根倒数": {
+		"prefix": "inversesqrt",
+		"body": [
+			"inversesqrt(${1:value})$2"
+		],
+		"description": "genType inversesqrt(genType x);\ngenDType inversesqrt(genDType x);\n\n返回1/sqrt(x)\n\n"
+	},
+
+	"isinf 判断无穷": {
+		"prefix": "isinf",
+		"body": [
+			"isinf(${1:value})$2"
+		],
+		"description": "genBType isinf(genType x);\ngenBType isinf(genDType x);\n\n如果x为正或负浮点无穷则返回true,否则返回false\n\n"
+	},
+
+	"isnan 判断非数字": {
+		"prefix": "isnan",
+		"body": [
+			"isnan(${1:value})$2"
+		],
+		"description": "genBType isnan(genType x);\ngenBType isnan(genDType x);\n\n如果x为NaN(Not a Number 非数字)则返回true,否则返回false\n\n"
+	},
+
+	"log": {
+		"prefix": "log",
+		"body": [
+			"log(${1:value})$2"
+		],
+		"description": "genType log(genType x);\n\n返回x的自然对数,返回值y满足x=e^y\n\n"
+	},
+
+	"log2": {
+		"prefix": "log2",
+		"body": [
+			"log2(${1:value})$2"
+		],
+		"description": "genType log2(genType x);\n\n返回以2为底x的对数,返回值y满足x=2^y\n\n"
+	},
+
+	"max 取大": {
+		"prefix": "max",
+		"body": [
+			"max(${1:x}, ${2:y})$3"
+		],
+		"description": "genType max(genType x,genType y);\ngenType max(genType x,float y);\ngenDType max(genDType x,genDType y);\ngenDType max(genDType x,double y);\ngenIType max(genIType x,genIType y);\ngenIType max(genIType x,int y);\ngenUType max(genUType x,genUType y);\ngenUType max(genUType x,uint y);\n\n返回x和y之间大的那个\n\n"
+	},
+
+	"min 取小": {
+		"prefix": "min",
+		"body": [
+			"min(${1:x}, ${2:y})$3"
+		],
+		"description": "genType min(genType x,genType y);\ngenType min(genType x,float y);\ngenDType min(genDType x,genDType y);\ngenDType min(genDType x,double y);\ngenIType min(genIType x,genIType y);\ngenIType min(genIType x,int y);\ngenUType min(genUType x,genUType y);\ngenUType min(genUType x,uint y);\n\n返回x和y之间小的那个\n\n"
+	},
+
+	"mix 线性插值": {
+		"prefix": "mix",
+		"body": [
+			"mix(${1:x}, ${2:y}, ${3:a})$4"
+		],
+		"description": "genType mix(genType x,genType y,genType a);\ngenType mix(genType x,genType y,float a);\ngenDType mix(genDType x,genDType y,genDType a);\ngenDType mix(genDType x,genDType y,double a);\ngenType mix(genType x,genType y,genBType a);\ngenDType mix(genDType x,genDType y,genBType a);\ngenIType mix(genIType x,genIType y,genBType a);\ngenUType mix(genUType x,genUType y,genBType a);\ngenBType mix(genBType x,genBType y,genBType a);\n\nx:插值范围的起点\ny:插值范围的终点\na:x和y之间进行插值的值\n\n\n返回(1-a)*x + a*y\n\n"
+	},
+
+	"mod 取余": {
+		"prefix": "mod",
+		"body": [
+			"mod(${1:x}, ${2:y})$3"
+		],
+		"description": "genType mod(genType x,float y);\ngenType mod(genType x,genType y);\ngenDType mod(genDType x,double y);\ngenDType mod(genDType x,genDType y);\n\n返回x-y*floor(x/y),即x/y的余数\n\n"
+	},
+
+	"modf 浮点数拆分为整数和小数": {
+		"prefix": "modf",
+		"body": [
+			"modf(${1:x}, out ${2:i})$3"
+		],
+		"description": "genType modf(genType x,out genType i);\ngenDType modf(genDType x,out genDType i);\n\nx:被拆分的浮点数\ni:存储整数部分\n\n\n拆分浮点数x,返回小数部分，整数部分(转化为浮点数)在输出参数i中返回\n\n"
+	},
+
+	"noise 噪声": {
+		"prefix": "noise",
+		"body": [
+			"noise${1:1}(${2:value})$3"
+		],
+		"description": "float noise1(genType x);\nvec2 noise2(genType x);\nvec3 noise3(genType x);\nvec4 noise4(genType x);\n\n根据输入值x返回噪声值(向量或标量)\n噪声函数是一种随机函数,可用于增加视觉复杂性\n噪声函数看起来是随机的,但不是真正的随机,它们被定义为具有以下特征:\n\n· 返回值始终在[-1.0, 1.0]之间,并且至少覆盖[-0.6, 0.6],具有类高斯分布\n· 返回值的总体平均值为0.0\n· 可复现,特定的x始终产生相同的返回值\n· 无论域如何旋转,它都具有相同的统计特征\n· 无论域如何变换,它都具有相同的统计特征\n· 通常在变换后给出不同的结果\n· 空间频率集中在0.5 ~ 1.0之间\n· 在任何地方都是C1连续的(一阶导数是连续的)\n\n"
+	},
+
+	"pow 幂运算": {
+		"prefix": "pow",
+		"body": [
+			"pow(${1:x}, ${2:y})$3"
+		],
+		"description": "genType pow(genType x, genType y);\n\n返回x^y\n\n"
+	},
+
+	"round 近似整数": {
+		"prefix": "round",
+		"body": [
+			"round(${1:value})$2"
+		],
+		"description": "genType round(genType x);\ngenDType round(genDType x);\n\n返回最接近x的整数\n\n"
+	},
+
+	"roundEven 近似偶数": {
+		"prefix": "roundEven",
+		"body": [
+			"roundEven(${1:value})$2"
+		],
+		"description": "genType roundEven(genType x);\ngenDType roundEven(genDType x);\n\n返回最接近x的偶数\n\n"
+	},
+
+	"sign 取符号": {
+		"prefix": "sign",
+		"body": [
+			"sign(${1:value})$2"
+		],
+		"description": "genType sign(genType x);\ngenIType sign(genIType x);\ngenDType sign(genDType x);\n\n返回x的符号:\n· x = 0,返回 0.0\n· x < 0,返回 -1.0\n· x > 0,返回 1.0\n\n"
+	},
+
+	"smoothstep 平滑插值": {
+		"prefix": "smoothstep",
+		"body": [
+			"smoothstep(${1:edge0}, ${2:edge1}, ${3:x})$4"
+		],
+		"description": "genType smoothstep(genType edge0,genType edge1,genType x);\ngenType smoothstep(float edge0,float edge1,genType x);\ngenDType smoothstep(genDType edge0,genDType edge1,genDType x);\ngenDType smoothstep(double edge0,double edge1,genDType x);\n\nedge0:Hermite函数的下边缘\ndege1:Hermite函数的上边缘\nx:插值的源值\n\n\n当edge0<x<edge1时,在0~1之间执行平滑Hermite插值\n\ngenType t;  /* Or genDType t; */\nt = clamp((x - edge0) / (edge1 - edge0), 0.0, 1.0);\nreturn t * t * (3.0 - 2.0 * t);\n\n"
+	},
+
+	"sqrt 平方根": {
+		"prefix": "sqrt",
+		"body": [
+			"sqrt(${1:value})$2"
+		],
+		"description": "genType sqrt(genType x);\ngenDType sqrt(genDType x);\n\n返回x的平方根\n\n"
+	},
+
+	"step 阶跃": {
+		"prefix": "step",
+		"body": [
+			"step(${1:edge}, ${2:x})$3"
+		],
+		"description": "genType step(genType edge,genType x);\ngenType step(float edge,genType x);\ngenDType step(genDType edge,genDType x);\ngenDType step(double edge,genDType x);\n\nedge:阶跃边缘值\nx:阶跃检测值\n\n\n当x > edge时,返回1.0;\n当x < edge时,返回0.0\n\n"
+	},
+
+	"trunc 向0取整": {
+		"prefix": "trunc",
+		"body": [
+			"trunc(${1:value})$2"
+		],
+		"description": "genType trunc(genType x);\ngenDType trunc(genDType x);\n\n返回最接近x并且绝对值不大于x的绝对值的整数\n\n"
+	},
+
+	//Floating-Point 浮点
+
+	"floatBitsToInt 浮点转整形": {
+		"prefix": "floatBitsToInt",
+		"body": [
+			"floatBitsToInt(${1:value})$2"
+		],
+		"description": "genIType floatBitsToInt(genType x);\n\n返回整形\n\n"
+	},
+
+	"floatBitsToUint 浮点转无符号整形": {
+		"prefix": "floatBitsToUint",
+		"body": [
+			"floatBitsToUint(${1:value})$2"
+		],
+		"description": "genIType floatBitsToUint(genType x);\n\n返回无符号整形\n\n"
+	},
+
+	"frexp 拆分浮点数": {
+		"prefix": "frexp",
+		"body": [
+			"frexp(${1:x}, out ${2:exp})$3"
+		],
+		"description": "genType frexp(genType x,out genIType exp);\ngenDType frexp(genDType x,out genIType exp);\n\n把浮点数分解为尾数和指数,返回尾数\n指数返回到exp\n\n\ne.g 1024.0的尾数为0.5,指数为11\n(1024.0 = 0.5 * 2^11)\n\n"
+	},
+
+	"intBitsToFloat 整形转化为浮点": {
+		"prefix": "intBitsToFloat",
+		"body": [
+			"intBitsToFloat(${1:value})$2"
+		],
+		"description": "genType intBitsToFloat(genIType x);\n\n返回浮点数\n\n"
+	},
+
+	"uintBitsToFloat 无符号整型转化为浮点": {
+		"prefix": "uintBitsToFloat",
+		"body": [
+			"uintBitsToFloat(${1:value})$2"
+		],
+		"description": "genType uintBitsToFloat(genUType x);\n\n返回浮点数\n\n"
+	},
+
+	"ldexp 组装浮点数": {
+		"prefix": "ldexp",
+		"body": [
+			"ldexp(${1:x}, ${2:exp})$3"
+		],
+		"description": "genType ldexp(genType x,genIType exp);\ngenDType ldexp(genDType x,genIType exp);\n\n根据尾数x和指数exp组装浮点数\n返回x * 2^exp\n\n"
+	},
+
+	"packDouble2x32 组装双精度浮点数": {
+		"prefix": "packDouble2x32",
+		"body": [
+			"packDouble2x32(${1:v})$2"
+		],
+		"description": "double packDouble2x32(uvec2 v);\n\nv:无符号整形二维向量\n\n\n将v的分量组装成一个64位的双精度浮点值\nv[0]指定结果的32个最低有效位,v[1]指定结果的32个最高有效位\n\n"
+	},
+
+	"packHalf2x16 组装无符号整数": {
+		"prefix": "packHalf2x16",
+		"body": [
+			"packHalf2x16(${1:v})$2"
+		],
+		"description": "uint packHalf2x16(vec2 v);\n\nv:浮点型二维向量\n\n\n返回一个无符号整数\n将浮点向量分量转换为opengl规范的16位浮点表示,然后将这两个16位整数打包成一个32位无符号整数\nv[0]指定结果的16个最低有效位\nv[1]指定结果的16个最高有效位\n\n"
+	},
+
+	"packUnorm2x16": {
+		"prefix": "packUnorm2x16",
+		"body": [
+			"packUnorm2x16(${1:v})$2"
+		],
+		"description": "uint packUnorm2x16(vec2 v);\n\nv:浮点型二维向量\n\n\n返回一个无符号整数\n将v的每个分量转换为16位整数,然后将结果打包成一个32位无符号整数\n对于v的每个分量c,满足下式:\nround(clamp(c, 0.0, 1.0) * 65535.0)\n\n"
+	},
+
+	"packUnorm4x8": {
+		"prefix": "packUnorm4x8",
+		"body": [
+			"packUnorm4x8(${1:v})$2"
+		],
+		"description": "uint packUnorm4x8(vec4 v);\n\nv:浮点型四维向量\n\n\n返回一个无符号整数\n将v的每个分量转换为8位整数,然后将结果打包成一个32位无符号整数\n对于v的每个分量c,满足下式:\nround(clamp(c, -1.0, 1.0) * 32767.0)\n\n"
+	},
+
+	"packSnorm2x16": {
+		"prefix": "packSnorm2x16",
+		"body": [
+			"packSnorm2x16(${1:v})$2"
+		],
+		"description": "uint packSnorm2x16(vec2 v);\n\nv:浮点型二维向量\n\n\n返回一个有符号整数\n将v的每个分量转换为16位整数,然后将结果打包成一个32位无符号整数\n对于v的每个分量c,满足下式:\nround(clamp(c, 0.0, 1.0) * 255.0)\n\n"
+	},
+
+	"packSnorm4x8": {
+		"prefix": "packSnorm4x8",
+		"body": [
+			"packSnorm4x8(${1:v})$2"
+		],
+		"description": "uint packSnorm4x8(vec4 v);\n\nv:浮点型四维向量\n\n\n返回一个有符号整数\n将v的每个分量转换为8位整数,然后将结果打包成一个32位无符号整数\n对于v的每个分量c,满足下式:\nround(clamp(c, -1.0, 1.0) * 127.0)\n\n"
+	},
+
+	"unpackDouble2x32": {
+		"prefix": "unpackDouble2x32",
+		"body": [
+			"unpackDouble2x32(${1:d})$2"
+		],
+		"description": "uvec2 unpackDouble2x32(double d);\n\nd:双精度浮点值\n\n\n返回无符号整形二维向量\n返回向量的第一个分量包含d的32个最低有效位\n第二个分量包含d的32个最高有效位\n\n"
+	},
+
+	"unpackHalf2x16": {
+		"prefix": "unpackHalf2x16",
+		"body": [
+			"unpackHalf2x16(${1:v})$2"
+		],
+		"description": "vec2 unpackHalf2x16(uint v);\n\nv:32位无符号整型,其中包含要解包的两个16位浮点值\n\n\n返回浮点型二维向量\n将32位无符号整数v解包为一对16位值,根据opengl规范解释为16位浮点数然后转换为32位浮点值\n向量的第一个分量是v的16个最低有效位\n第二个分量是v的16个最高有效位\n\n"
+	},
+
+	"unpackUnorm2x16": {
+		"prefix": "unpackUnorm2x16",
+		"body": [
+			"unpackUnorm2x16(${1:p})$2"
+		],
+		"description": "vec2 unpackUnorm2x16(uint p);\n\np:无符号整形\n\n\n返回浮点型二维向量\n将p解包为一对16位无符号整数,然后将每个分量转换为归一化的浮点值\n解压缩定点值f执行的转换如下:\nf / 65535.0\n\n"
+	},
+
+	"unpackUnorm4x8": {
+		"prefix": "unpackUnorm4x8",
+		"body": [
+			"unpackUnorm4x8(${1:p})$2"
+		],
+		"description": "vec4 unpackUnorm4x8(uint p);\n\np:无符号整形\n\n\n返回浮点型四维向量\n将p解包为四个8位无符号整数,然后将每个分量转换为归一化的浮点值\n解压缩定点值f执行的转换如下:\nf / 255.0\n\n"
+	},
+
+	"unpackSnorm2x16": {
+		"prefix": "unpackSnorm2x16",
+		"body": [
+			"unpackSnorm2x16(${1:p})$2"
+		],
+		"description": "vec2 unpackUnorm2x16(uint p);\n\np:无符号整形\n\n\n返回浮点型二维向量\n将p解包为一对16位无符号整数,然后将每个分量转换为归一化的浮点值\n解压缩定点值f执行的转换如下:\nclamp(f / 32727.0, -1.0, 1.0)\n\n"
+	},
+
+	"unpackSnorm4x8": {
+		"prefix": "unpackSnorm4x8",
+		"body": [
+			"unpackSnorm4x8(${1:p})$2"
+		],
+		"description": "vec2 unpackUnorm2x16(uint p);\n\np:无符号整形\n\n\n返回浮点型二维向量\n将p解包为四个8位有符号整数,然后将每个分量转换为归一化的浮点值\n解压缩定点值f执行的转换如下:\nclamp(f / 127.0, -1.0, 1.0)\n\n"
+	},
+
+	//Built-In Variables 内建变量
+
+	"gl_ClipDistance": {
+		"prefix": "gl_ClipDistance",
+		"body": [
+			"gl_ClipDistance"
+		],
+		"description": "in float gl_ClipDistance[];\n为顶点裁剪提供了向前兼容的机制\n\ngl_ClipDistance是gl_PerVertex命名块的成员之一:\n\tout gl_PerVertex {\n\t   vec4 gl_Position;\n\t   float gl_PointSize;\n\t   float gl_ClipDistance[];\n\t};\n\n"
+	},
+
+	"gl_CullDistance": {
+		"prefix": "gl_CullDistance",
+		"body": [
+			"gl_CullDistance"
+		],
+		"description": "in float gl_CullDistance[];\n提供了一种控制用户剔除的机制\n\ngl_CullDistance是gl_PerVertex命名块的成员之一:\n\tout gl_PerVertex {\n\t   vec4 gl_Position;\n\t   float gl_PointSize;\n\t   float gl_ClipDistance[];\n\t   float gl_CullDistance[];\n\t};\n\n"
+	},
+
+	"gl_FragCoord": {
+		"prefix": "gl_FragCoord",
+		"body": [
+			"gl_FragCoord"
+		],
+		"description": "in vec4 gl_FragCoord;\n包含当前片段的窗口相对坐标\n\n"
+	},
+
+	"gl_FragDepth": {
+		"prefix": "gl_FragDepth",
+		"body": [
+			"gl_FragDepth"
+		],
+		"description": "out float gl_FragDepth;\n为当前片段建立深度值\n\n"
+	},
+
+	"gl_FrontFacing": {
+		"prefix": "gl_FrontFacing",
+		"body": [
+			"gl_FrontFacing"
+		],
+		"description": "in bool gl_FrontFacing;\n指示图元是正面还是背面\n\n"
+	},
+
+	"gl_GlobalInvocationID": {
+		"prefix": "gl_GlobalInvocationID",
+		"body": [
+			"gl_GlobalInvocationID"
+		],
+		"description": "in uvec3 gl_GlobalInvocationID;\n包含计算着色器当前正在操作的工作项的全局索引\n\n"
+	},
+
+	"gl_HelperInvocation": {
+		"prefix": "gl_HelperInvocation",
+		"body": [
+			"gl_HelperInvocation"
+		],
+		"description": "in bool gl_HelperInvocation;\n指示片段着色器是否是辅助调用\n\n"
+	},
+
+	"gl_InstanceID": {
+		"prefix": "gl_InstanceID",
+		"body": [
+			"gl_InstanceID"
+		],
+		"description": "in int gl_InstanceID;\n包含实例化绘制命令中当前图元的索引\n\n"
+	},
+
+	"gl_InvocationID": {
+		"prefix": "gl_InvocationID",
+		"body": [
+			"gl_InvocationID"
+		],
+		"description": "in int gl_InvocationID;\n包含当前着色器的调用索引\n\n"
+	},
+
+	"gl_Layer": {
+		"prefix": "gl_Layer",
+		"body": [
+			"gl_Layer"
+		],
+		"description": "几何着色器:   out int gl_Layer;\n片段着色器:   in int gl_Layer;\n包含多层帧缓冲附件的选定层\n\n"
+	},
+
+	"gl_LocalInvocationID": {
+		"prefix": "gl_LocalInvocationID",
+		"body": [
+			"gl_LocalInvocationID"
+		],
+		"description": "in uvec3 gl_LocalInvocationID;\n包含计算着色器当前正在操作的工作项的索引\n\n"
+	},
+
+	"gl_LocalInvocationIndex": {
+		"prefix": "gl_LocalInvocationIndex",
+		"body": [
+			"gl_LocalInvocationIndex"
+		],
+		"description": "in uint gl_LocalInvocationIndex;\n包含计算着色器当前正在操作的工作项的本地线性索引\n\n"
+	},
+
+	"gl_NumSamples": {
+		"prefix": "gl_NumSamples",
+		"body": [
+			"gl_NumSamples"
+		],
+		"description": "in bool gl_NumSamples;\n包含帧缓冲区中的样本总数\n\n"
+	},
+
+	"gl_NumWorkGroups": {
+		"prefix": "gl_NumWorkGroups",
+		"body": [
+			"gl_NumWorkGroups"
+		],
+		"description": "in uvec3 gl_NumWorkGroups;\n包含已分配到计算着色器的工作组数\n\n"
+	},
+
+	"gl_PatchVerticesIn": {
+		"prefix": "gl_PatchVerticesIn",
+		"body": [
+			"gl_PatchVerticesIn"
+		],
+		"description": "in int gl_PatchVerticesIn;\n包含当前补丁中的顶点数\n\n"
+	},
+
+	"gl_PointCoord": {
+		"prefix": "gl_PointCoord",
+		"body": [
+			"gl_PointCoord"
+		],
+		"description": "in vec2 gl_PointCoord;\n包含一个点内片段的坐标\n\n"
+	},
+
+	"gl_PointSize": {
+		"prefix": "gl_PointSize",
+		"body": [
+			"gl_PointSize"
+		],
+		"description": "gl_PointSize是gl_PerVertex命名块的成员:\n\tout gl_PerVertex {\n\t   vec4 gl_Position;\n\t   float gl_PointSize;\n\t   float gl_ClipDistance[];\n\t};\n包含光栅化点的大小,以像素为单位\n\n"
+	},
+
+	"gl_Position": {
+		"prefix": "gl_Position",
+		"body": [
+			"gl_Position"
+		],
+		"description": "gl_Position是gl_PerVertex命名块的成员:\n\tout gl_PerVertex {\n\t   vec4 gl_Position;\n\t   float gl_PointSize;\n\t   float gl_ClipDistance[];\n\t};\n包含当前顶点的位置\n\n"
+	},
+
+	"gl_PrimitiveID": {
+		"prefix": "gl_PrimitiveID",
+		"body": [
+			"gl_PrimitiveID"
+		],
+		"description": "tessellation control, tessellation evaluation 和 片段着色器中:   in int gl_PrimitiveID;\n几何着色器中:   out int gl_PrimitiveID\n包含当前片元的索引\n\n"
+	},
+
+	"gl_PrimitiveIDIn": {
+		"prefix": "gl_PrimitiveIDIn",
+		"body": [
+			"gl_PrimitiveIDIn"
+		],
+		"description": "in int gl_PrimitiveIDIn;\n包含当前片元的索引\n\n"
+	},
+
+	"gl_SampleID": {
+		"prefix": "gl_SampleID",
+		"body": [
+			"gl_SampleID"
+		],
+		"description": "in int gl_SampleID;\n包含当前正在处理的样本的索引\n\n"
+	},
+
+	"gl_SampleMask": {
+		"prefix": "gl_SampleMask",
+		"body": [
+			"gl_SampleMask"
+		],
+		"description": "out int gl_SampleMask[];\n指定当前片段的样本覆盖掩码\n\n"
+	},
+
+	"gl_SampleMaskIn": {
+		"prefix": "gl_SampleMaskIn",
+		"body": [
+			"gl_SampleMaskIn"
+		],
+		"description": "in int gl_SampleMaskIn[];\n包含当前片段的计算样本覆盖掩码\n\n"
+	},
+
+	"gl_SamplePosition": {
+		"prefix": "gl_SamplePosition",
+		"body": [
+			"gl_SamplePosition"
+		],
+		"description": "in vec2 gl_SamplePosition;\n包含当前片段中当前样本的位置\n\n"
+	},
+
+	"gl_TessCoord": {
+		"prefix": "gl_TessCoord",
+		"body": [
+			"gl_TessCoord"
+		],
+		"description": "in vec3 gl_TessCoord;\n包含当前补丁中顶点的坐标\n\n"
+	},
+
+	"gl_TessLevelInner": {
+		"prefix": "gl_TessLevelInner",
+		"body": [
+			"gl_TessLevelInner"
+		],
+		"description": "In tessellation control shaders:   out float gl_TessLevelInner[2];\nIn tessellation evaluation shaders:   in float gl_TessLevelInner[2];\n包含当前补丁的内部细分级别\n\n"
+	},
+
+	"gl_TessLevelOuter": {
+		"prefix": "gl_TessLevelOuter",
+		"body": [
+			"gl_TessLevelOuter"
+		],
+		"description": "In tessellation control shaders:   out float gl_TessLevelOuter[4];\nIn tessellation evaluation shaders:   in float gl_TessLevelOuter[4];\n包含当前补丁的外部细分级别\n\n"
+	},
+
+	"gl_VertexID": {
+		"prefix": "gl_VertexID",
+		"body": [
+			"gl_VertexID"
+		],
+		"description": "in int gl_VertexID;\n包含当前顶点的索引\n\n"
+	},
+
+	"gl_ViewportIndex": {
+		"prefix": "gl_ViewportIndex",
+		"body": [
+			"gl_ViewportIndex"
+		],
+		"description": "在几何着色器中:   out int gl_ViewportIndex;\n在片段着色器中:   in int gl_ViewportIndex;\n包含要在视口转换和剪裁中使用的视口的索引\n\n"
+	},
+
+	"gl_WorkGroupID": {
+		"prefix": "gl_WorkGroupID",
+		"body": [
+			"gl_WorkGroupID"
+		],
+		"description": "in uvec3 gl_WorkGroupID;\n包含计算着色器当前正在操作的工作组的索引\n\n"
+	},
+
+	"gl_WorkGroupSize": {
+		"prefix": "gl_WorkGroupSize",
+		"body": [
+			"gl_WorkGroupSize"
+		],
+		"description": "const uvec3 gl_WorkGroupSize;\n包含计算着色器操作的工作组的大小\n\n"
+	},
+
+	//Vector 向量
+
+	"cross 叉乘": {
+		"prefix": "cross",
+		"body": [
+			"cross(${1:v1}, ${2:v2})$3"
+		],
+		"description": "vec3 cross(vec3 x,vec3 y);\ndvec3 cross(dvec3 x,dvec3 y);\n\n返回x和y的叉积\n\n"
+	},
+
+	"distance 距离": {
+		"prefix": "distance",
+		"body": [
+			"distance(${1:p0}, ${2:p1})$3"
+		],
+		"description": "float distance(genType p0,genType p1);\ndouble distance(genDType p0,genDType p1);\n\n返回p0和p1两点之间的距离\n\n"
+	},
+
+	"dot 点乘": {
+		"prefix": "dot",
+		"body": [
+			"dot(${1:v1}, ${2:v2})$3"
+		],
+		"description": "float dot(genType x,genType y);\ndouble dot(genDType x,genDType y);\n\n返回x和y的点积\n\n"
+	},
+
+	"equal 判断相等": {
+		"prefix": "equal",
+		"body": [
+			"equal(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec equal(vec x,vec y);\nbvec equal(ivec x,ivec y);\nbvec equal(uvec x,uvec y);\n\n返回x与y逐分量比较是否相等的bool向量\n\n"
+	},
+
+	"faceforward 面向视图方向的曲面法向量": {
+		"prefix": "faceforward",
+		"body": [
+			"faceforward(${1:N}, ${2:I}, ${3:Nref})$4"
+		],
+		"description": "genType faceforward(genType N,genType I,genType Nref);\ngenDType faceforward(genDType N,genDType I,genDType Nref);\n\nN:要定向的向量\nI:事件向量\nNref:参考向量\n\n\n如果dot(Nerf, I) < 0,返回N,否则返回-N\n\n"
+	},
+
+	"length 计算长度": {
+		"prefix": "length",
+		"body": [
+			"length(${1:x})$2"
+		],
+		"description": "float length(genType x);\ndouble length(genDType x);\n\nx:要计算长度的向量\n\n\n返回向量的长度\n\n"
+	},
+
+	"normalize 归一化": {
+		"prefix": "normalize",
+		"body": [
+			"normalize(${1:v})$2"
+		],
+		"description": "genType normalize(genType v);\ngenDType normalize(genDType v);\n\n返回v的归一化结果\n\n"
+	},
+
+	"notEqual 判断不相等": {
+		"prefix": "notEqual",
+		"body": [
+			"notEqual(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec notEqual(vec x,vec y);\nbvec notEqual(ivec x,ivec y);\nbvec notEqual(uvec x,uvec y);\n\n返回x与y逐分量比较是否不相等的bool向量\n\n"
+	},
+
+	"reflect 计算反射向量": {
+		"prefix": "reflect",
+		"body": [
+			"reflect(${1:I}, ${2:N})$3"
+		],
+		"description": "genType reflect(genType I,genType N);\ngenDType reflect(genDType I,genDType N);\n\nI:入射向量\nN:归一化的表面法线向量\n\n\n计算入射向量的反射向量\nI - 2.0 * dot(N, I) * N\n\n"
+	},
+
+	"refract": {
+		"prefix": "refract",
+		"body": [
+			"refract(${1:I}, ${2:N}, ${3:eta})$4"
+		],
+		"description": "genType refract(genType I,genType N,float eta);\ngenDType refract(genDType I,genDType N,float eta);\n\nI:归一化的入射向量\nN:归一化的表面法线向量\neta:折射率的比率\n\n\n返回折射向量R:\n    k = 1.0 - eta * eta * (1.0 - dot(N, I) * dot(N, I));\n    if (k < 0.0)\n        R = genType(0.0);       // or genDType(0.0)\n    else\n        R = eta * I - (eta * dot(N, I) + sqrt(k)) * N;\n\n"
+	},
+
+	//Component Comparison 组件比较
+
+	"all": {
+		"prefix": "all",
+		"body": [
+			"all(${1:bv})$2"
+		],
+		"description": "bool all(bvec x);\n\n如果bool向量x的各分量全为true,返回true,否则返回false\n\n"
+	},
+
+	"any": {
+		"prefix": "any",
+		"body": [
+			"any(${1:bv})$2"
+		],
+		"description": "bool any(bvec x);\n\n如果bool向量x的任意分量为true,返回true,否则返回false\n\n"
+	},
+
+	"greaterThan": {
+		"prefix": "greaterThan",
+		"body": [
+			"greaterThan(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec greaterThan(vec x,vec y);\nbvec greaterThan(ivec x,ivec y);\nbvec greaterThan(uvec x,uvec y);\n\n返回x与y逐分量比较x[i] > y[i]的bool向量\n\n"
+	},
+
+	"greaterThanEqual": {
+		"prefix": "greaterThanEqual",
+		"body": [
+			"greaterThanEqual(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec greaterThanEqual(vec x,vec y);\nbvec greaterThanEqual(ivec x,ivec y);\nbvec greaterThanEqual(uvec x,uvec y);\n\n返回x与y逐分量比较x[i] >= y[i]的bool向量\n\n"
+	},
+
+	"lessThan": {
+		"prefix": "lessThan",
+		"body": [
+			"lessThan(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec lessThan(vec x,vec y);\nbvec lessThan(ivec x,ivec y);\nbvec lessThan(uvec x,uvec y);\n\n返回x与y逐分量比较x[i] < y[i]的bool向量\n\n"
+	},
+
+	"lessThanEqual": {
+		"prefix": "lessThanEqual",
+		"body": [
+			"lessThanEqual(${1:v1}, ${2:v2})$3"
+		],
+		"description": "bvec lessThanEqual(vec x,vec y);\nbvec lessThanEqual(ivec x,ivec y);\nbvec lessThanEqual(uvec x,uvec y);\n\n返回x与y逐分量比较x[i] <= y[i]的bool向量\n\n"
+	},
+
+	"not": {
+		"prefix": "not",
+		"body": [
+			"not(${1:bv})$2"
+		],
+		"description": "bvec not(bvec x);\n\n反转bool向量x的各分量\n\n"
+	},
+
+	//Geometry Shader 几何着色器
+
+	"EmitStreamVertex": {
+		"prefix": "EmitStreamVertex",
+		"body": [
+			"EmitStreamVertex(${1:stream})$2"
+		],
+		"description": "void EmitStreamVertex(int stream);\n\nstream:将在其上发射顶点的流\n\n\n将顶点发射到指定流\n\n"
+	},
+
+	"EmitVertex": {
+		"prefix": "EmitVertex",
+		"body": [
+			"EmitVertex()$1"
+		],
+		"description": "void EmitVertex(void);\n\n向第一个顶点流发射一个顶点\n将输出变量的当前值发送到第一个(也可能是唯一一个)图元流上的当前输出图元\n相当于调用EmitStreamVertex(0)\n\n"
+	},
+
+	"EndPrimitive": {
+		"prefix": "EndPrimitive",
+		"body": [
+			"EndPrimitive()$1"
+		],
+		"description": "void EndPrimitive(void);\n\n在第一个顶点流上完成当前输出图元\n在第一个(也可能是唯一一个)顶点流上完成当前输出图元并开始一个新的.不发射顶点\n相当于调用EndStreamPrimitive(0)\n\n"
+	},
+
+	"EndStreamPrimitive": {
+		"prefix": "EndStreamPrimitive",
+		"body": [
+			"EndStreamPrimitive(${1:stream})$2"
+		],
+		"description": "void EndStreamPrimitive(int stream);\n\n在指定流上完成当前输出图元,不发射顶点\n\n"
+	},
+
+	//Texture Sampling 纹理采样
+
+	"interpolateAtCentroid 质心采样": {
+		"prefix": "interpolateAtCentroid",
+		"body": [
+			"interpolateAtCentroid(${1:interpolant})$2"
+		],
+		"description": "float interpolateAtCentroid(float interpolant);\nvec2 interpolateAtCentroid(vec2 interpolant);\nvec3 interpolateAtCentroid(vec3 interpolant);\nvec4 interpolateAtCentroid(vec4 interpolant);\n\ninterpolant:要在像素质心处采样的插值\n\n\n在像素的质心处对变化采样\n返回在像素和正在处理的图元内部的某个位置采样的输入变化插值的值\n如果使用质心限定符声明,则获得的值将是分配给输入变量的值\n\n"
+	},
+
+	"interpolateAtOffset 质心偏移采样": {
+		"prefix": "interpolateAtOffset",
+		"body": [
+			"interpolateAtOffset(${1:interpolant}, ${2:offset})$3"
+		],
+		"description": "float interpolateAtOffset(float interpolant,vec2 offset);\nvec2 interpolateAtOffset(vec2 interpolant,vec2 offset);\nvec3 interpolateAtOffset(vec3 interpolant,vec2 offset);\nvec4 interpolateAtOffset(vec4 interpolant,vec2 offset);\n\ninterpolant:要在指定偏移处采样的插值\noffset:对插值采样的像素中心的偏移量\n\n\n返回在偏移指定的像素中心的偏移处采样的输入变化插值的值\noffset的两个浮点分量分别给出像素中心在x和y方向上的偏移量\n(0,0)的偏移量标识像素中心\n\n"
+	},
+
+	"interpolateAtSample 指定样本采样": {
+		"prefix": "interpolateAtSample",
+		"body": [
+			"interpolateAtSample(${1:interpolant}, ${2:sample})$3"
+		],
+		"description": "float interpolateAtSample(float interpolant,int sample);\nvec2 interpolateAtSample(vec2 interpolant,int sample);\nvec3 interpolateAtSample(vec3 interpolant,int sample);\nvec4 interpolateAtSample(vec4 interpolant,int sample);\n\ninterpolant:要在sample的位置采样的插值\nsample:其位置将用于采样插值的样本的索引\n\n\n返回在样本编号sample的位置采样的输入变化插值的值\n如果多样本缓冲区不可用,则输入变化将在像素的中心进行评估/n如果样本编号sample不存在,则用于插值输入变量的位置undefined\n\n"
+	},
+
+	"texelFetch 查找单个纹素": {
+		"prefix": "texelFetch",
+		"body": [
+			"texelFetch(${1:sampler}, ${2:P}${3:, ${4:lod/sample/}})$5"
+		],
+		"description": "gvec4 texelFetch(gsampler1D sampler,int P,int lod);\ngvec4 texelFetch(gsampler2D sampler,ivec2 P,int lod);\ngvec4 texelFetch(gsampler3D sampler,ivec3 P,int lod);\ngvec4 texelFetch(gsampler2DRect sampler,ivec2 P);\ngvec4 texelFetch(gsampler1DArray sampler,ivec2 P,int lod);\ngvec4 texelFetch(gsampler2DArray sampler,ivec3 P,int lod);\ngvec4 texelFetch(gsamplerBuffer sampler,int P);\ngvec4 texelFetch(gsampler2DMS sampler,ivec2 P,sample sample);\ngvec4 texelFetch(gsampler2DMSArray sampler,ivec3 P,sample sample);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定将从中获取纹素的纹理中的细节层次\nsample:对于多重采样获取,指定纹素中的哪个样本将从哪个样本返回\n\n\nTexelFetch从绑定到采样器的纹理中的纹理坐标P中执行单个texel的查找\n数组层在数组形式的P的最后一个组件中指定\nlod指定将从中获取纹素的详细程度\n样本指定从多样本纹理读取时将返回纹素中的哪个样本\n\n"
+	},
+
+	"texelFetchOffset 偏移查找单个纹素": {
+		"prefix": "texelFetchOffset",
+		"body": [
+			"texelFetchOffset(${1:sampler}, ${2:P}${3:, ${4:lod}}, ${5:offset})$6"
+		],
+		"description": "gvec4 texelFetchOffset(gsampler1D sampler,int P,int lod,int offset);\ngvec4 texelFetchOffset(gsampler2D sampler,ivec2 P,int lod,int offset);\ngvec4 texelFetchOffset(gsampler3D sampler,ivec3 P,int lod,int offset);\ngvec4 texelFetchOffset(gsampler2DRect sampler,ivec2 P,int offset);\ngvec4 texelFetchOffset(gsampler1DArray sampler,ivec2 P,int lod,int offset);\ngvec4 texelFetchOffset(gsampler2DArray sampler,ivec3 P,int lod,int offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定将从中获取纹素的纹理中的细节层次\noffset:在查找纹素之前应用于P的纹素中的偏移量\n\n\nTexelFetchOffset从绑定到采样器的纹理中的纹理坐标P中执行单个texel的查找,在获取纹素之前,将在offset中指定的偏移量添加到P\noffset必须是一个常量表达式\n数组层在数组形式的P的最后一个组件中指定\nlod指定将从中获取纹素的详细程度\n\n"
+	},
+
+	"texture 检索纹素": {
+		"prefix": "texture",
+		"body": [
+			"texture(${1:sampler}, ${2:P}${3:, ${4:[bias]}}${5:, ${6:compare}})$7"
+		],
+		"description": "gvec4 texture(gsampler1D sampler,float P,[float bias]);\ngvec4 texture(gsampler2D sampler,vec2 P,[float bias]);\ngvec4 texture(gsampler3D sampler,vec3 P,[float bias]);\ngvec4 texture(gsamplerCube sampler,vec3 P,[float bias]);\nfloat texture(sampler1DShadow sampler,vec3 P,[float bias]);\nfloat texture(sampler2DShadow sampler,vec3 P,[float bias]);\nfloat texture(samplerCubeShadow sampler,vec3 P,[float bias]);\ngvec4 texture(gsampler1DArray sampler,vec2 P,[float bias]);\ngvec4 texture(gsampler2DArray sampler,vec3 P,[float bias]);\ngvec4 texture(gsamplerCubeArray sampler,vec4 P,[float bias]);\nfloat texture(sampler1DArrayShadow sampler,vec3 P,[float bias]);\nfloat texture(gsampler2DArrayShadow sampler,vec4 P,[float bias]);\ngvec4 texture(gsampler2DRect sampler,vec2 P);\nfloat texture(sampler2DRectShadow sampler,vec3 P);\nfloat texture(gsamplerCubeArrayShadow sampler,vec4 P,float compare);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nbias:[可选参数]在详细级别计算期间要应用的偏差\ncompare:从gsamplerCubeArrayShadow采样时将于获取的纹素进行比较的值\n\n\n从纹理中检索纹素"
+	},
+
+	"textureGather 收集四个纹素": {
+		"prefix": "textureGather",
+		"body": [
+			"textureGather(${1:sampler}, ${2:P}${3:, ${4:[comp]}}${5:, ${6:refZ}})$7"
+		],
+		"description": "gvec4 textureGather(gsampler2D sampler,vec2 P,[int comp]);\ngvec4 textureGather(gsampler2DArray sampler,vec3 P,[int comp]);\ngvec4 textureGather(gsamplerCube sampler,vec3 P,[int comp]);\ngvec4 textureGather(gsamplerCubeArray sampler,vec4 P,[int comp]);\ngvec4 textureGather(gsampler2DRect sampler,vec3 P,[int comp]);\nvec4 textureGather(gsampler2DShadow sampler,vec2 P,float refZ);\nvec4 textureGather(gsampler2DArrayShadow sampler,vec3 P,float refZ);\nvec4 textureGather(gsamplerCubeShadow sampler,vec3 P,float refZ);\nvec4 textureGather(gsamplerCubeArrayShadow sampler,vec4 P,float refZ);\nvec4 textureGather(gsampler2DRectShadow sampler,vec3 P,float refZ);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ncomp:[可选参数]将用于生成结果向量的源纹理的组件\nrefZ:指定阴影形式比较中使用的参考Z值\n\n\ntextureGather返回值如下:\n    vec4(Sample_i0_j1(P, base).comp,\n\tSample_i1_j1(P, base).comp,\n\tSample_i1_j0(P, base).comp,\n\tSample_i0_j0(P, base).comp);\n\n从纹理中收集纹素\n如果指定,comp的值必须为0,1,2,3;分别标识每个纹素的四分量向量查找结果的x,y,z,w分量\n如果未指定comp,则将其视为0,选择每个纹素的x分量生成结果\n\n"
+	},
+
+	"textureGatherOffset 偏移收集四个纹素": {
+		"prefix": "textureGatherOffset",
+		"body": [
+			"textureGatherOffset(${1:sampler}, ${2:P}${3:, ${4:refZ}}, ${5:offset}${6:, ${7:[comp]}})$8"
+		],
+		"description": "gvec4 textureGatherOffset(gsampler2D sampler,vec2 P,ivec2 offset,[int comp]);\ngvec4 textureGatherOffset(gsampler2DArray sampler,vec3 P,ivec2 offset,[int comp]);\ngvec4 textureGatherOffset(gsampler2DRect sampler,vec3 P,ivec2 offset,[int comp]);\nvec4 textureGatherOffset(gsampler2DShadow sampler,vec2 P,float refZ,ivec2 offset);\nvec4 textureGatherOffset(gsampler2DArrayShadow sampler,vec3 P,float refZ,ivec2 offset);\nvec4 textureGatherOffset(gsampler2DRectShadow sampler,vec3 P,float refZ,ivec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ncomp:[可选参数]将用于生成结果向量的源纹理的组件\nrefZ:指定阴影形式比较中使用的参考Z值\noffset:指定从指定纹理坐标P开始的偏移量,纹素将从该坐标处收集\n\n\ntextureGather返回值如下:\n    vec4(Sample_i0_j1(P + offset, base).comp,\n\tSample_i1_j1(P + offset, base).comp,\n\tSample_i1_j0(P + offset, base).comp,\n\tSample_i0_j0(P + offset, base).comp);\n\n\n从带有偏移的纹理中收集四个纹素\n和textureGather相同,但应用了如textureOffset中所述的偏移\n最小偏移值由GL_MIN_PROGRRAM_TEXTURE_GATHER_OFFSET给出\n最大偏移值由GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET给出\n\n如果指定,comp的值必须为0,1,2,3;分别标识每个纹素的四分量向量查找结果的x,y,z,w分量\n如果未指定comp,则将其视为0,选择每个纹素的x分量生成结果\n\n"
+	},
+
+	"textureGatherOffsets 偏移数组收集四个纹素": {
+		"prefix": "textureGatherOffsets",
+		"body": [
+			"textureGatherOffsets(${1:sampler}, ${2:P}${3:, ${4:refZ}}, ${5:offset[4]}${6:, ${7:[comp]}})$8"
+		],
+		"description": "gvec4 textureGatherOffsets(gsampler2D sampler,vec2 P,ivec2 offset[4],[int comp]);\ngvec4 textureGatherOffsets(gsampler2DArray sampler,vec3 P,ivec2 offset[4],[int comp]);\ngvec4 textureGatherOffsets(gsampler2DRect sampler,vec3 P,ivec2 offset[4],[int comp]);\nvec4 textureGatherOffsets(gsampler2DShadow sampler,vec2 P,float refZ,ivec2 offset[4]);\nvec4 textureGatherOffsets(gsampler2DArrayShadow sampler,vec3 P,float refZ,ivec2 offset[4]);\nvec4 textureGatherOffsets(gsampler2DRectShadow sampler,vec3 P,float refZ,ivec2 offset[4]);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ncomp:[可选参数]将用于生成结果向量的源纹理的组件\nrefZ:指定阴影形式比较中使用的参考Z值\noffsets:指定从指定纹理坐标P开始的偏移数组,从中收集纹素\n\n\n从具有偏移数组的纹理中收集四个纹素\n与textureGatherOffset的操作相同,只是使用偏移量数组来确定要采样的四个纹素的位置\n四个纹素中的每一个都是通过将offsets中的偏移量作为(u, v)坐标偏移量应用到P,识别四个纹素GL_LINEAR足迹,然后选择该足迹的纹素i0i0来获得的\noffsets中的指定值必须使用常量整数表达式进行设置\n\n"
+	},
+
+	"textureGrad 显式梯度纹理查找": {
+		"prefix": "textureGrad",
+		"body": [
+			"textureGrad(${1:sampler}, ${2:P}, ${3:dPdx}, ${4:dPdy})$5"
+		],
+		"description": "gvec4 textureGrad(gsampler1D sampler,float P,float dPdx,float dPdy);\ngvec4 textureGrad(gsampler2D sampler,vec2 P,vec2 dPdx,vec2 dPdy);\ngvec4 textureGrad(gsampler3D sampler,vec3 P,vec3 dPdx,vec3 dPdy);\ngvec4 textureGrad(gsamplerCube sampler,vec3 P,vec3 dPdx,vec3 dPdy);\ngvec4 textureGrad(gsampler2DRect sampler,vec2 P,vec2 dPdx,vec2 dPdy);\nfloat textureGrad(gsampler2DRectShadow sampler,vec2 P,vec2 dPdx,vec2 dPdy);\nfloat textureGrad(sampler1DShadow sampler,vec3 P,float dPdx,float dPdy);\nfloat textureGrad(sampler2DShadow sampler,vec3 P,vec2 dPdx,vec2 dPdy);\ngvec4 textureGrad(gsampler1DArray sampler,vec2 P,float dPdx,float dPdy);\ngvec4 textureGrad(gsampler2DArray sampler,vec3 P,vec2 dPdx,vec2 dPdy);\nfloat textureGrad(sampler1DArrayShadow sampler,vec3 P,float dPdx,float dPdy);\ngvec4 textureGrad(gsamplerCubeArray sampler,vec4 P,vec3 dPdx,vec3 dPdy);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ndPdx:P相对于窗口x的偏导数\ndPdy:P相对于窗口y的偏导数\n\n\n使用显式梯度执行纹理查找\ntextureGrad使用dPdx和dPdy中指定的显式纹理坐标梯度在从纹理绑定到采样器的坐标P处执行纹理查找\n对于立方体版本,假定P的偏导数在纹理坐标投影到适当的立方体面上之前使用的坐标系中\n\n"
+	},
+
+	"textureGradOffset 显式梯度和偏移进行纹理查找": {
+		"prefix": "textureGradOffset",
+		"body": [
+			"textureGradOffset(${1:sampler}, ${2:P}, ${3:dPdx}, ${4:dPdy}, ${5:offset})$6"
+		],
+		"description": "gvec4 textureGradOffset(gsampler1D sampler,float P,float dPdx,float dPdy,int offset);\ngvec4 textureGradOffset(gsampler2D sampler,vec2 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureGradOffset(gsampler3D sampler,vec3 P,vec3 dPdx,vec3 dPdy,ivec3 offset);\ngvec4 textureGradOffset(gsampler2DRect sampler,vec2 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\nfloat textureGradOffset(gsampler2DRectShadow sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\nfloat textureGradOffsetsampler1DShadow sampler,vec3 P,float dPdx,float dPdy,int offset);\nfloat textureGradOffset(sampler2DShadow sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureGradOffset(gsampler1DArray sampler,vec2 P,float dPdx,float dPdy,int offset);\ngvec4 textureGradOffset(gsampler2DArray sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\nfloat textureGradOffset(sampler1DArrayShadow sampler,vec3 P,float dPdx,float dPdy,int offset);\nfloat textureGradOffset(sampler2DArrayShadow sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ndPdx:P相对于窗口x的偏导数\ndPdy:P相对于窗口y的偏导数\noffset:采样前要应用于纹理坐标的偏移量\n\n\n使用显式梯度和偏移执行纹理查找\ntextureGradOffset使用dPdx和dPdy中指定的显式纹理坐标梯度在从纹理绑定到采样器的坐标P处执行纹理查找\noffset中还提供了显式偏移量\ntextureGradOffset使用dPdx和dPdy作为textureGrad;使用offset作为textureOffset\n\n"
+	},
+
+	"textureLod 显式细节级别纹理查找": {
+		"prefix": "textureLod",
+		"body": [
+			"textureLod(${1:sampler}, ${2:P}, ${3:lod})$4"
+		],
+		"description": "gvec4 textureLod(gsampler1D sampler,float P,float lod);\ngvec4 textureLod(gsampler2D sampler,vec2 P,float lod);\ngvec4 textureLod(gsampler3D sampler,vec3 P,float lod);\ngvec4 textureLod(gsamplerCube sampler,vec3 P,float lod);\nfloat textureLod(sampler1DShadow sampler,vec3 P,float lod);\nfloat textureLod(sampler2DShadow sampler,vec4 P,float lod);\ngvec4 textureLod(gsampler1DArray sampler,vec2 P,float lod);\ngvec4 textureLod(gsampler2DArray sampler,vec3 P,float lod);\nfloat textureLod(sampler1DArrayShadow sampler,vec3 P,float lod);\ngvec4 textureLod(gsamplerCubeArray sampler,vec4 P,float lod);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定明确的详细程度\n\n\n执行具有显式细节级别的纹理查找\n\ntextureLod在坐标P从绑定到采样器的纹理执行纹理查找,具有lod中指定的显式细节级别\nlod指定λbase并设置偏导数如下:\nδu/δx=0, δu/δy=0, δv/δx=0\nδv/δy=0, δw/δx=0, δw/δy=0\n\n"
+	},
+
+	"textureLodOffset 显式细节级别和偏移进行纹理查找": {
+		"prefix": "textureLodOffset",
+		"body": [
+			"textureLodOffset(${1:sampler}, ${2:P}, ${3:lod}, ${4:offset})$5"
+		],
+		"description": "gvec4 textureLodOffset(gsampler1D sampler,float P,float lod,int offset);\ngvec4 textureLodOffset(gsampler2D sampler,vec2 P,float lod,ivec2 offset);\ngvec4 textureLodOffset(gsampler3D sampler,vec3 P,float lod,ivec3 offset);\nfloat textureLodOffset(sampler1DShadow sampler,vec3 P,float lod,int offset);\nfloat textureLodOffset(sampler2DShadow sampler,vec4 P,float lod,ivec2 offset);\ngvec4 textureLodOffset(gsampler1DArray sampler,vec2 P,float lod,int offset);\ngvec4 textureLodOffset(gsampler2DArray sampler,vec3 P,float lod,ivec2 offset);\nfloat textureLodOffset(sampler1DArrayShadow sampler,vec3 P,float lod,int offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定将从中获取纹素的显式细节级别\noffset:指定在获取纹素之前将应用于P的偏移量\n\n\n使用明确的细节层次和偏移执行纹理查找\n\ntextureLodOffset在坐标P处从绑定到采样器的纹理执行纹理查找,具有在lod中指定的显式细节级别\n行为与textureLod中的相同,只是在采样之前,将偏移量添加到P\n\n"
+	},
+
+	"textureOffset 偏移纹理查找": {
+		"prefix": "textureOffset",
+		"body": [
+			"textureOffset(${1:sampler}, ${2:P}, ${3:offset}${4:, ${5:[bias]}})$6"
+		],
+		"description": "gvec4 textureOffset(gsampler1D sampler,float P,int offset,[float bias]);\ngvec4 textureOffset(gsampler2D sampler,vec2 P,ivec2 offset,[float bias]);\ngvec4 textureOffset(gsampler3D sampler,vec3 P,ivec3 offset,[float bias]);\ngvec4 textureOffset(gsampler2DRect sampler,vec2 P,ivec2 offset);\nfloat textureOffset(sampler2DRectShadow sampler,vec3 P,ivec2 offset);\nfloat textureOffset(sampler1DShadow sampler,vec3 P,int offset,[float bias]);\nfloat textureOffset(sampler2DShadow sampler,vec4 P,ivec2 offset,[float bias]);\ngvec4 textureOffset(gsampler1DArray sampler,vec2 P,int offset,[float bias]);\ngvec4 textureOffset(gsampler2DArray sampler,vec3 P,ivec2 offset,[float bias]);\nfloat textureOffset(sampler1DArrayShadow sampler,vec3 P,int offset);\nfloat textureOffset(sampler2DArrayShadow sampler,vec4 P,vec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\noffset:指定在查找纹素之前将应用于P的纹素中的偏移量\n\n\ntextureOffset在从纹理绑定到采样器的坐标P处执行纹理查找,带有一个额外的偏移量,在偏移量中的纹素中指定,在查找每个纹素之前将应用于(u, v, w)纹理坐标\n偏移量必须是常量表达式,支持有限范围的偏移值\n最小和最大偏移值取决于实现:\n· 查询GL_MIN_PROGRAM_TEXEL_OFFSET确定最小值\n· 查询GL_MAX_PROGRAM_TEXEL_OFFSET确定最大值\n\n注意:\n   offset不适用于纹理数组的层坐标\n   立方体贴图不支持偏移\n\n"
+	},
+
+	"textureProj 投影纹理查找": {
+		"prefix": "textureProj",
+		"body": [
+			"textureProj(${1:sampler}, ${2:P}${3:, ${4:[bias]}})$5"
+		],
+		"description": "gvec4 textureProj(gsampler1D sampler,vec2 P,[float bias]);\ngvec4 textureProj(gsampler1D sampler,vec4 P,[float bias]);\ngvec4 textureProj(gsampler2D sampler,vec3 P,[float bias]);\ngvec4 textureProj(gsampler2D sampler,vec4 P,[float bias]);\ngvec4 textureProj(gsampler3D sampler,vec4 P,[float bias]);\nfloat textureProj(sampler1DShadow sampler,vec4 P,[float bias]);\nfloat textureProj(sampler2DShadow sampler,vec4 P,[float bias]);\ngvec4 textureProj(gsampler2DRect sampler,vec3 P);\ngvec4 textureProj(gsampler2DRect sampler,vec4 P);\nfloat textureProj(gsampler2DRectShadow sampler,vec4 P);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nbias:[可选参数]指定在详细级别计算期间要应用的偏差\n\n\n使用投影执行纹理查找\n\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textrue中一样进行\n\n"
+	},
+
+	"textureProjGrad 投影和显式梯度纹理查找": {
+		"prefix": "textureProjGrad",
+		"body": [
+			"textureProjGrad(${1:sampler}, ${2:P}, ${3:dPdx}, ${4:dPdy})$5"
+		],
+		"description": "gvec4 textureProjGrad(gsampler1D sampler,vec2 P,float pDx,float pDy);\ngvec4 textureProjGrad(gsampler1D sampler,vec4 P,float pDx,float pDy);\ngvec4 textureProjGrad(gsampler2D sampler,vec3 P,vec2 pDx,vec2 pDy);\ngvec4 textureProjGrad(gsampler2D sampler,vec4 P,vec2 pDx,vec2 pDy);\ngvec4 textureProjGrad(gsampler3D sampler,vec4 P,vec3 pDx,vec3 pDy);\nfloat textureProjGrad(sampler1DShadow sampler,vec4 P,float pDx,float pDy);\nfloat textureProjGrad(sampler2DShadow sampler,vec4 P,vec2 pDx,vec2 pDy);\ngvec4 textureProjGrad(gsampler2DRect sampler,vec3 P,vec2 pDx,vec2 pDy);\ngvec4 textureProjGrad(gsampler2DRect sampler,vec4 P,vec2 pDx,vec2 pDy);\nfloat textureProjGrad(gsampler2DRectShadow sampler,vec4 P,vec2 pDx,vec2 pDy);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ndPdx:指定P相对于窗口x的偏导数\ndPdy:指定P相对于窗口y的偏导数\n\n\n使用投影和显式梯度执行纹理查找\n\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textrueGrad中一样进行,将dPdx和dPdy作为梯度传递\n\n"
+	},
+
+	"textureProjGradOffset 投影、显式梯度和偏移纹理查找": {
+		"prefix": "textureProjGradOffset",
+		"body": [
+			"textureProjGradOffset(${1:sampler}, ${2:P}, ${3:dPdx}, ${4:dPdy}, ${5:offset})%6"
+		],
+		"description": "gvec4 textureProjGradOffset(gsampler1D sampler,vec2 P,float dPdx,float dPdy,int offset);\ngvec4 textureProjGradOffset(gsampler1D sampler,vec4 P,float dPdx,float dPdy,int offset);\ngvec4 textureProjGradOffset(gsampler2D sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureProjGradOffset(gsampler2D sampler,vec4 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureProjGradOffset(gsampler3D sampler,vec4 P,vec3 dPdx,vec3 dPdy,ivec3 offset);\nfloat textureProjGradOffset(sampler1DShadow sampler,vec4 P,float dPdx,float dPdy,int offset);\nfloat textureProjGradOffset(sampler2DShadow sampler,vec4 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureProjGradOffset(gsampler2DRect sampler,vec3 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\ngvec4 textureProjGradOffset(gsampler2DRect sampler,vec4 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\nfloat textureProjGradOffset(gsampler2DRectShadow sampler,vec4 P,vec2 dPdx,vec2 dPdy,ivec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\ndPdx:指定P相对于窗口x的偏导数\ndPdy:指定P相对于窗口y的偏导数,offset:指定偏移量,以纹素为单位,纹理将相对于P的投影进行采样\n\n\n使用投影、显式梯度和偏移执行纹理查找\n\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textureGradOffset中一样进行,将dPdx和dPdy作为梯度传递,将offset作为偏移量传递\n\n"
+	},
+
+	"textureProjLod 投影和显式细节级别纹理查找": {
+		"prefix": "textureProjLod",
+		"body": [
+			"textureProjLod(${1:sampler}, ${2:P}, ${3:lod})$4"
+		],
+		"description": "gvec4 textureProjLod(gsampler1D sampler,vec2 P,float lod);\ngvec4 textureProjLod(gsampler1D sampler,vec4 P,float lod);\ngvec4 textureProjLod(gsampler2D sampler,vec3 P,float lod);\ngvec4 textureProjLod(gsampler2D sampler,vec4 P,float lod);\ngvec4 textureProjLod(gsampler3D sampler,vec4 P,float lod);\nfloat textureProjLod(sampler1DShadow sampler,vec4 P,float lod);\nfloat textureProjLod(sampler2DShadow sampler,vec4 P,float lod);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定要从中获取纹素的显式细节级别\n\n\ntextureProjLod使用来自明确指定的细节层次的投影执行纹理查找\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textureLod中一样进行\nlod用于指定将从中对纹理进行采样的细节级别\n\n"
+	},
+
+	"textureProjLodOffset 投影、显式细节级别和偏移纹理查找": {
+		"prefix": "textureProjLodOffset",
+		"body": [
+			"textureProjLodOffset(${1:sampler}, ${2:P}, ${3:lod}, ${4:offset})$5"
+		],
+		"description": "gvec4 textureProjLodOffset(gsampler1D sampler,vec2 P,float lod,int offset);\ngvec4 textureProjLodOffset(gsampler1D sampler,vec4 P,float lod,int offset);\ngvec4 textureProjLodOffset(gsampler2D sampler,vec3 P,float lod,ivec2 offset);\ngvec4 textureProjLodOffset(gsampler2D sampler,vec4 P,float lod,ivec2 offset);\ngvec4 textureProjLodOffset(gsampler3D sampler,vec4 P,float lod,ivec3 offset);\nfloat textureProjLodOffset(sampler1DShadow sampler,vec4 P,float lod,int offset);\nfloat textureProjLodOffset(sampler2DShadow sampler,vec4 P,float lod,ivec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\nlod:指定要从中获取纹素的显式细节级别\noffset:指定在获取纹素之前要应用于P中的偏移量(以纹素为单位)\n\n\ntextureProjLodOffset使用从显式指定的细节层次的投影执行纹理查找,并在采样前将偏移应用于纹理坐标\n\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textureLodOffset中一样进行\nlod用于指定纹理将从其采样的细节级别\noffset用于指定采样前要应用于纹理坐标的偏移量(以纹素为单位)\n\n"
+	},
+
+	"textureProjOffset 投影和偏移纹理查找": {
+		"prefix": "textureProjOffset",
+		"body": [
+			"textureProjOffset(${1:sampler}, ${2:P}, ${3:offset}${4:, ${5:[bias]}})$6"
+		],
+		"description": "gvec4 textureProjOffset(gsampler1D sampler,vec2 P,int offset,[float bias]);\ngvec4 textureProjOffset(gsampler1D sampler,vec4 P,int offset,[float bias]);\ngvec4 textureProjOffset(gsampler2D sampler,vec3 P,ivec2 offset,[float bias]);\ngvec4 textureProjOffset(gsampler2D sampler,vec4 P,ivec2 offset,[float bias]);\ngvec4 textureProjOffset(gsampler3D sampler,vec4 P,ivec3 offset,[float bias]);\nfloat textureProjOffset(sampler1DShadow sampler,vec4 P,int offset,[float bias]);\nfloat textureProjOffset(sampler2DShadow sampler,vec4 P,ivec2 offset,[float bias]);\ngvec4 textureProjOffset(gsampler2DRect sampler,vec3 P,ivec2 offset);\ngvec4 textureProjOffset(gsampler2DRect sampler,vec4 P,ivec2 offset);\nfloat textureProjOffset(gsampler2DRectShadow sampler,vec4 P,ivec2 offset);\n\nsampler:将从中检索纹素的纹理绑定到的采样器\nP:纹理将被采样的纹理坐标\noffset:指定在采样发生前应用于P的偏移量\nbias:[可选参数]指定在详细级别计算期间要应用的偏差\n\n\ntextureProjOffset使用投影执行纹理查找\n从P消耗的纹理坐标(不包括P的最后一个分量)除以P的最后一个分量\n得到的P在阴影形式中的3rd分量用作Dref\n计算完这些值后,纹理查找将像在textureOffset中一样进行\noffset用于偏移计算的纹理坐标\n\n"
+	},
+
+	"textureQueryLevels 计算mipmap级别": {
+		"prefix": "textureQueryLevels",
+		"body": [
+			"textureQueryLevels(${1:sampler})$2"
+		],
+		"description": "int textureQueryLevels(gsampler1D sampler);\nint textureQueryLevels(gsampler2D sampler);\nint textureQueryLevels(gsampler3D sampler);\nint textureQueryLevels(gsamplerCube sampler);\nint textureQueryLevels(gsampler1DArray sampler);\nint textureQueryLevels(gsampler2DDArray sampler);\nint textureQueryLevels(gsamplerCubeArray sampler);\nint textureQueryLevels(gsampler1DShadow sampler);\nint textureQueryLevels(gsampler2DShadow sampler);\nint textureQueryLevels(gsamplerCubeShadow sampler);\nint textureQueryLevels(gsampler1DArrayShadow sampler);\nint textureQueryLevels(gsampler2DArrayShadow sampler);\nint textureQueryLevels(gsamplerCubeArrayShadow sampler);\n\nsampler:指定将查询mipmap级别计数的纹理绑定到的采样器\n\n\n返回与采样器关联的纹理中可访问的mipmap级别数\n如果在不完整的纹理上调用,或者没有纹理与采样器关联,则返回0\n\n"
+	},
+
+	"textureQueryLod 计算细节级别": {
+		"prefix": "textureQueryLod",
+		"body": [
+			"textureQueryLod(${1:sampler}, ${2:P})$3"
+		],
+		"description": "vec2 textureQueryLod(gsampler1D sampler,float P);\nvec2 textureQueryLod(gsampler2D sampler,vec2 P);\nvec2 textureQueryLod(gsampler3D sampler,vec3 P);\nvec2 textureQueryLod(gsamplerCube sampler,vec3 P);\nvec2 textureQueryLod(gsampler1DArray sampler,float P);\nvec2 textureQueryLod(gsampler2DDArray sampler,vec2 P);\nvec2 textureQueryLod(gsamplerCubeArray sampler,vec3 P);\nvec2 textureQueryLod(sampler1DShadow sampler,float P);\nvec2 textureQueryLod(sampler2DShadow sampler,vec2 P);\nvec2 textureQueryLod(samplerCubeShadow sampler,vec3 P);\nvec2 textureQueryLod(sampler1DArrayShadow sampler,float P);\nvec2 textureQueryLod(sampler2DArrayShadow sampler,vec2 P);\nvec2 textureQueryLod(samplerCubeArrayShadow sampler,vec3 P);\n\nsampler:指定将查询其细节级别的纹理绑定到的采样器\nP:指定将查询细节级别的纹理坐标\n\n\n仅在片段着色器中可用\ntextureQueryLod计算将用于从纹理中采样的细节级别\n将被访问的mipmap数组在返回值的x分量中返回\n在返回值的y分两种返回计算的相对于基本级别的详细级别\n如果在不完整的纹理上调用,则操作的结果是undefined\n\n"
+	},
+
+	"textureSamples 纹理样本数": {
+		"prefix": "textureSamples",
+		"body": [
+			"textureSamples(${1:sampler})$2"
+		],
+		"description": "int textureSamples(gsampler2DMS sampler);\nint textureSamples(gsampler2DMSArray sampler);\n\nsampler:指定纹理绑定到的采样器\n\n\n返回绑定到采样器的纹理的每个纹素的样本数\n\n"
+	},
+
+	"textureSize 纹理级别尺寸": {
+		"prefix": "textureSize",
+		"body": [
+			"textureSize(${1:sampler}${2:, ${3:lod}})$4"
+		],
+		"description": "int textureSize(gsampler1D sampler,int lod);\nivec2 textureSize(gsampler2D sampler,int lod);\nivec3 textureSize(gsampler3D sampler,int lod);\nivec2 textureSize(gsamplerCube sampler,int lod);\nint textureSize(sampler1DShadow sampler,int lod);\nivec2 textureSize(sampler2DShadow sampler,int lod);\nivec2 textureSize(samplerCubeShadow sampler,int lod);\nivec3 textureSize(samplerCubeArray sampler,int lod);\nivec3 textureSize(samplerCubeArrayShadow sampler,int lod);\nivec2 textureSize(gsamplerRect sampler);\nivec2 textureSize(gsamplerRectShadow sampler);\nivec2 textureSize(gsampler1DArray sampler,int lod);\nivec3 textureSize(gsampler2DArray sampler,int lod);\nivec2 textureSize(sampler1DArrayShadow sampler,int lod);\nivec3 textureSize(sampler2DArrayShadow sampler,int lod);\nint textureSize(gsamplerBuffer sampler);\nivec2 textureSize(gsampler2DMS sampler);\nivec3 textureSize(gsampler2DMSArray sampler);\n\nsampler:指定要检索其尺寸的纹理绑定到的采样器\nlod:指定要为其检索尺寸的纹理级别\n\n\n返回绑定到采样器的纹理的级别lod(如果存在)的尺寸\n返回值中的组件一次填充纹理的宽度、高度和深度\n对于数组形式,返回值的最后一个组成部分是纹理数组中的层数\n\n"
+	},
+
+	//Matrix 矩阵
+
+	"determinant 计算行列式": {
+		"prefix": "determinant",
+		"body": [
+			"determinant(${1:m})$2"
+		],
+		"description": "float determinant(mat2 m);\nfloat determinant(mat3 m);\nfloat determinant(mat4 m);\ndouble determinant(dmat2 m);\ndouble determinant(dmat3 m);\ndouble determinant(dmat4 m);\n\n返回矩阵m的行列式\n\n"
+	},
+
+	"groupMemoryBarrier": {
+		"prefix": "groupMemoryBarrier",
+		"body": [
+			"groupMemoryBarrier()$1"
+		],
+		"description": "void groupMemoryBarrier(void);\n\n等待计算着色器调用执行的所有内存访问完成,将对于同一工作组中其它调用执行的相同访问,然后返回没有其他效果\n\n"
+	},
+
+	"inverse 计算逆矩阵": {
+		"prefix": "inverse",
+		"body": [
+			"inverse(${1:m})$2"
+		],
+		"description": "mat2 inverse(mat2 m);\nmat3 inverse(mat3 m);\nmat4 inverse(mat4 m);\ndmat2 inverse(dmat2 m);\ndmat3 inverse(dmat3 m);\ndmat4 inverse(dmat4 m);\n\n返回矩阵m的逆矩阵\n\n"
+	},
+
+	"matrixCompMult 矩阵乘": {
+		"prefix": "matrixCompMult",
+		"body": [
+			"matrixCompMult(${1:m1}, ${2:m2})$3"
+		],
+		"description": "mat matrixCompMult(mat x,mat y);\ndmat matrixCompMult(dmat x,dmat y);\n\n执行两个矩阵的按分量相乘,产生一个结果矩阵\n其中每个分量result[i][j]计算为x[i][j]和y[i][j]的标量积\n\n"
+	},
+
+	"outerProduct 计算外积": {
+		"prefix": "outerProduct",
+		"body": [
+			"outerProduct(${1:column}, ${2:row})$3"
+		],
+		"description": "mat2 outerProduct(vec2 c,vec2 r);\nmat3 outerProduct(vec3 c,vec3 r);\nmat4 outerProduct(vec4 c,vec4 r);\nmat2x3 outerProduct(vec3 c,vec2 r);\nmat3x2 outerProduct(vec2 c,vec3 r);\nmat2x4 outerProduct(vec4 c,vec2 r);\nmat4x2 outerProduct(vec2 c,vec4 r);\nmat3x4 outerProduct(vec4 c,vec3 r);\nmat4x3 outerProduct(vec3 c,vec4 r);\ndmat2 outerProduct(dvec2 c,dvec2 r);\ndmat3 outerProduct(dvec3 c,dvec3 r);\ndmat4 outerProduct(dvec4 c,dvec4 r);\ndmat2x3 outerProduct(dvec3 c,dvec2 r);\ndmat3x2 outerProduct(dvec2 c,dvec3 r);\ndmat2x4 outerProduct(dvec4 c,dvec2 r);\ndmat4x2 outerProduct(dvec2 c,dvec4 r);\ndmat3x4 outerProduct(dvec4 c,dvec3 r);\ndmat4x3 outerProduct(dvec3 c,dvec4 r);\n\n将第一个参数c视为列向量,将第二个参数r视为行向量\n以线性代数矩阵相乘计算c*r,得到一个矩阵\n其行数为c中组件数,列数是r中组件数\n\n"
+	},
+
+	"transpose 矩阵转置": {
+		"prefix": "transpose",
+		"body": [
+			"transpose(${1:m})$2"
+		],
+		"description": "mat2 transpose(mat2 m);\nmat3 transpose(mat3 m);\nmat4 transpose(mat4 m);\nmat2x3 transpose(mat3x2 m);\nmat2x4 transpose(mat4x2 m);\nmat3x2 transpose(mat2x3 m);\nmat3x4 transpose(mat4x3 m);\nmat4x2 transpose(mat2x4 m);\nmat4x3 transpose(mat3x4 m);\ndmat2 transpose(dmat2 m);\ndmat3 transpose(dmat3 m);\ndmat4 transpose(dmat4 m);\ndmat2x3 transpose(dmat3x2 m);\ndmat2x4 transpose(dmat4x2 m);\ndmat3x2 transpose(dmat2x3 m);\ndmat3x4 transpose(dmat4x3 m);\ndmat4x2 transpose(dmat2x4 m);\ndmat4x3 transpose(dmat3x4 m);\n\n返回矩阵m的转置\n\n"
+	},
+
+	//Integer 整数
+
+	"bitCount": {
+		"prefix": "bitCount",
+		"body": [
+			"bitCount(${1:value})$2"
+		],
+		"description": "genIType bitCount(genIType value);\ngenIType bitCount(genUType value);\n\n返回value的二进制表示中1的个数\n\n"
+	},
+
+	"bitfieldExtract": {
+		"prefix": "bitfieldExtract",
+		"body": [
+			"bitfieldExtract(${1:value}, ${2:offset}, ${3:bits})$4"
+		],
+		"description": "genIType bitfieldExtract(genIType value,int offset,int bits);\ngenUType bitfieldExtract(genUType value,int offset,int bits);\n\nvalue:指定从中提取位的整数\noffset:指定要提取的第一位的索引\nbits:指定要提取的位数\n\n\nbitfieldExtract提取value位的子集并在结果的最低有效位中返回它\n提取的位范围为[offset, offset + bits + 1]\n对于无符号数据类型,结果的最高有效位将设置为0\n对于有符号数据类型,最高有效位将设置为offset + bits - 1(符号扩展到返回类型的宽度)\n如果位为0,则结果为0\n如果offset或bits为负,或者offset和bits的总和大于用于存储操作数的位数,则结果将undefined\n\n"
+	},
+
+	"bitfieldInsert": {
+		"prefix": "bitfieldInsert",
+		"body": [
+			"bitfieldInsert(${1:base}, ${2:insert}, ${3:offset}, ${4:bits})$5"
+		],
+		"description": "genIType bitfieldInsert(genIType base,genIType insert,int offset,int bits);\ngenUType bitfieldInsert(genUType base,genUType insert,int offset,int bits);\n\nbase:指定要被插入insert的整数\ninsert:指定要插入的位的值\noffset:指定要插入的第一位的索引\nbits:指定要插入的位数\n\n\n在base的偏移offset处将insert的最低有效位插入bits个\n返回值的位[offset, offset + bits + 1]取自insert的[0, bits - 1],所有其他位置直接取自对应的base位\n如果bits为0,则结果将只是base的原始值\n如果offset或bits为0,或者offset和bits的总和大于用于存储操作数的位数,则结果undefined\n\n"
+	},
+
+	"bitfieldReverse": {
+		"prefix": "bitfieldReverse",
+		"body": [
+			"bitfieldReverse(${1:value})$2"
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+
+	"": {
+		"prefix": "",
+		"body": [
+			""
+		],
+		"description": ""
+	},
+}
