@@ -750,6 +750,102 @@
 		"description": "const uvec3 gl_WorkGroupSize;\n包含计算着色器操作的工作组的大小\n\n"
 	},
 
+	"gl_FragColor": {
+		"prefix": "gl_FragColor",
+		"body": "gl_FragColor",
+		"description": "mediump vec4 gl_FragColor;\n\nThe built-in variable gl_FragColor is used by the fragment shader to hand over the color of the fragment to the OpenGL ES 2.0 pipeline. The variable is pre-declared as shown above that way the variable can be used in the fragment shader for an assignment without prior declaration.\nThe values of the color vector are interpreted in the RGBA color space.\nThe assignment of values to this variable is mandatory for the fragment shader."
+	},
+
+	//内建常量
+
+	"gl_MaxVertexAttribs": {
+		"prefix": "gl_MaxVertexAttribs",
+		"body": [
+			"gl_MaxVertexAttribs"
+		],
+		"description": "const mediump int gl_MaxVertexAttribs = 16;\n可用的顶点输入变量(GLSL 1.3之前为attribute变量)的最大数量\n\n"
+	},
+
+	"gl_MaxVertexUniformVectors": {
+		"prefix": "gl_MaxVertexUniformVectors",
+		"body": [
+			"gl_MaxVertexUniformVectors"
+		],
+		"description": "const mediump int gl_MaxVertexUniformVectors = 256;\n可用的vec4统一变量(uniform变量)的最大数量  需要#version 410及以上\n\n"
+	},
+
+	"gl_MaxVertexOutputVectors": {
+		"prefix": "gl_MaxVertexOutputVectors",
+		"body": [
+			"gl_MaxVertexOutputVectors"
+		],
+		"description": "const mediump int gl_MaxVertexOutputVectors = 16;\n可用的顶点输出变量(GLSL 1.3之前为varying变量)的最大数量  需要#version 410及以上\n\n"
+	},
+
+	"gl_MaxVertexTextureImageUnits": {
+		"prefix": "gl_MaxVertexTextureImageUnits",
+		"body": [
+			"gl_MaxVertexTextureImageUnits"
+		],
+		"description": "const mediump int gl_MaxVertexTextureImageUnits = 16;\n可用的纹理的最大数量\n\n"
+	},
+
+	"gl_MaxCombinedTextureImageUnits": {
+		"prefix": "gl_MaxCombinedTextureImageUnits",
+		"body": [
+			"gl_MaxCombinedTextureImageUnits"
+		],
+		"description": "const mediump int gl_MaxCombinedTextureImageUnits = 32;\nvs和fs中可用的纹理的最大数量的总和\n\n"
+	},
+
+	"gl_MaxFragmentInputVectors": {
+		"prefix": "gl_MaxFragmentInputVectors",
+		"body": [
+			"gl_MaxFragmentInputVectors"
+		],
+		"description": "const mediump int gl_MaxFragmentInputVectors = 15;\n片元输入变量(GLSL 1.3之前为varying)变量的最大数量  需要#version 410及以上\n\n"
+	},
+
+	"gl_MaxTextureImageUnits": {
+		"prefix": "gl_MaxTextureImageUnits",
+		"body": [
+			"gl_MaxTextureImageUnits"
+		],
+		"description": "const mediump int gl_MaxTextureImageUnits = 16;\n可用的纹理的最大数量\n\n"
+	},
+
+	"gl_MaxFragmentUniformVectors": {
+		"prefix": "gl_MaxFragmentUniformVectors",
+		"body": [
+			"gl_MaxFragmentUniformVectors"
+		],
+		"description": "const mediump int gl_MaxFragmentUniformVectors = 224;\n可用的vec4统一变量(uniform变量)的最大数量  需要#version 410及以上\n\n"
+	},
+
+	"gl_MaxDrawBuffers": {
+		"prefix": "gl_MaxDrawBuffers",
+		"body": [
+			"gl_MaxDrawBuffers"
+		],
+		"description": "const mediump int gl_MaxDrawBuffers = 4;\n多重渲染目标(MRT)的最大支持数量。\n\n"
+	},
+
+	"gl_MinProgramTexelOffset": {
+		"prefix": "gl_MinProgramTexelOffset",
+		"body": [
+			"gl_MinProgramTexelOffset"
+		],
+		"description": "const mediump int gl_MinProgramTexelOffset = -8;\n内建ESSL函数texture*Offset偏移参数迟滞的最小偏移值  需要#version 410及以上\n\n"
+	},
+
+	"gl_MaxProgramTexelOffset": {
+		"prefix": "gl_MaxProgramTexelOffset",
+		"body": [
+			"gl_MaxProgramTexelOffset"
+		],
+		"description": "const mediump int gl_MaxProgramTexelOffset = 7;\n内建ESSL函数texture*Offset偏移参数迟滞的最大偏移值  需要#version 410及以上\n\n"
+	},
+
 	//Vector 向量
 
 	"cross 叉乘": {
@@ -1128,14 +1224,6 @@
 		"description": "float determinant(mat2 m);\nfloat determinant(mat3 m);\nfloat determinant(mat4 m);\ndouble determinant(dmat2 m);\ndouble determinant(dmat3 m);\ndouble determinant(dmat4 m);\n\n返回矩阵m的行列式\n\n"
 	},
 
-	"groupMemoryBarrier": {
-		"prefix": "groupMemoryBarrier",
-		"body": [
-			"groupMemoryBarrier()$1"
-		],
-		"description": "void groupMemoryBarrier(void);\n\n等待计算着色器调用执行的所有内存访问完成,将对于同一工作组中其它调用执行的相同访问,然后返回没有其他效果\n\n"
-	},
-
 	"inverse 计算逆矩阵": {
 		"prefix": "inverse",
 		"body": [
@@ -1199,7 +1287,1077 @@
 		"body": [
 			"bitfieldReverse(${1:value})$2"
 		],
+		"description": "genIType bitfieldReverse(genIType value);\ngenUType bitfieldReverse(genUType value);\n\n反转value的位顺序\n编号位n的位将取自value的(bits - 1) - n\n   bits表示value的总位数\n\n"
+	},
+
+	"findLSB": {
+		"prefix": "findLSB",
+		"body": [
+			"findLSB(${1:value})$2"
+		],
+		"description": "genIType findLSB(genIType value);\ngenIType findLSB(genUType value);\n\n返回value的二进制表示中设置为1的最低有效位的位数\n如果value为0,则返回-1\n\n"
+	},
+
+	"findMSB": {
+		"prefix": "findMSB",
+		"body": [
+			"findMSB(${1:value})$2"
+		],
+		"description": "genIType findMSB(genIType value);\ngenIType findMSB(genUType value);\n\n返回value的二进制表示中设置为1的最高有效位的位数\n   对于正整数,结果僵尸设置为1的最高有效位的位数\n   对于负整数,结果将是设置为0的最高有效位的位数\n   对于0或-1,返回-1\n\n"
+	},
+
+	"uaddCarry": {
+		"prefix": "uaddCarry",
+		"body": [
+			"uaddCarry(${1:x}, ${2:y}, ${3:carry})$4"
+		],
+		"description": "genUType uaddCarry(genUType x,genUType y,out genUType carry);\n\nx:指定要在求和运算中使用的第一个向量\ny:指定要在求和运算中使用的第二个向量\ncarry:和的进位输出\n\n\n将两个32位无符号整型变量(标量或向量)相加并生成一个32位无符号整数结果以及一个进位输出\n结果是x和y模2^32的总和\n如果总和小于2^32,则carry设置为0,否则设置为1\n\n"
+	},
+
+	"umulExtended": {
+		"prefix": "umulExtended",
+		"body": [
+			"${1|u,i|}mulExtended(${2:x}, ${3:y}, ${4:msb}, ${5:lsb})$6"
+		],
+		"description": "void umulExtended(genUType x,genUType y,out genUType msb,out genUType lsb);\nvoid imulExtended(genIType x,genIType y,out genIType msb,out genIType lsb);\n\nx:第一个被乘数\ny:第二个被乘数\nmsb:结果的32个最高有效位\nlsb:结果的32个最低有效位\n\n\n执行两个32位整数x和y的乘法,产生64位整数结果\n乘积的32个最低有效位返回至lsb\n乘积的32个最高有效位返回至msb\n\numulExtended 和 imulExtended分别执行无符号和有符号乘法\n\n"
+	},
+
+	"usubBorrow": {
+		"prefix": "usubBorrow",
+		"body": [
+			"usubBorrow(${1:x}, ${2:y}, ${3:borrow})$4"
+		],
+		"description": "genUType usubBorrow(genUType x,genUType y,out genUType borrow);\n\nx:指定要在减法运算中使用的第一个向量\ny:指定要在减法运算中使用的第二个向量\nborrow:差的借位输出\n\n\n减去两个32位无符号整型变量(标量或向量)并生成一个32位无符号整数结果以及借位输出\n结果是x和y的差(如果非负),否则为2^32加上该差\n如果x>=y,则borrow设置为0,否则设置为1\n\n"
+	},
+
+	//Image 图片
+
+	"imageAtomicAdd": {
+		"prefix": "imageAtomicAdd",
+		"body": [
+			"imageAtomicAdd(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicAdd(gimage1D image,int P,uint data);\nuint imageAtomicAdd(gimage2D image,ivec2 P,uint data);\nuint imageAtomicAdd(gimage3D image,ivec3 P,uint data);\nuint imageAtomicAdd(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicAdd(gimageCube image,ivec3 P,uint data);\nuint imageAtomicAdd(gbufferImage image,int P,uint data);\nuint imageAtomicAdd(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicAdd(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicAdd(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicAdd(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicAdd(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicAdd(gimage1D image,int P,int data);\nint imageAtomicAdd(gimage2D image,ivec2 P,int data);\nint imageAtomicAdd(gimage3D image,ivec3 P,int data);\nint imageAtomicAdd(gimage2DRect image,ivec2 P,int data);\nint imageAtomicAdd(gimageCube image,ivec3 P,int data);\nint imageAtomicAdd(gbufferImage image,int P,int data);\nint imageAtomicAdd(gimage1DArray image,ivec2 P,int data);\nint imageAtomicAdd(gimage2DArray image,ivec3 P,int data);\nint imageAtomicAdd(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicAdd(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicAdd(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageAtomicAnd": {
+		"prefix": "imageAtomicAnd",
+		"body": [
+			"imageAtomicAnd(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicAnd(gimage1D image,int P,uint data);\nuint imageAtomicAnd(gimage2D image,ivec2 P,uint data);\nuint imageAtomicAnd(gimage3D image,ivec3 P,uint data);\nuint imageAtomicAnd(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicAnd(gimageCube image,ivec3 P,uint data);\nuint imageAtomicAnd(gbufferImage image,int P,uint data);\nuint imageAtomicAnd(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicAnd(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicAnd(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicAnd(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicAnd(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicAnd(gimage1D image,int P,int data);\nint imageAtomicAnd(gimage2D image,ivec2 P,int data);\nint imageAtomicAnd(gimage3D image,ivec3 P,int data);\nint imageAtomicAnd(gimage2DRect image,ivec2 P,int data);\nint imageAtomicAnd(gimageCube image,ivec3 P,int data);\nint imageAtomicAnd(gbufferImage image,int P,int data);\nint imageAtomicAnd(gimage1DArray image,ivec2 P,int data);\nint imageAtomicAnd(gimage2DArray image,ivec3 P,int data);\nint imageAtomicAnd(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicAnd(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicAnd(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageAtomicCompSwap": {
+		"prefix": "imageAtomicCompSwap",
+		"body": [
+			"imageAtomicCompSwap(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:compare}, ${6:data})$7"
+		],
+		"description": "uint imageAtomicCompSwap(gimage1D image,int P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage2D image,ivec2 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage3D image,ivec3 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage2DRect image,ivec2 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimageCube image,ivec3 P,uint compare,uint data);\nuint imageAtomicCompSwap(gbufferImage image,int P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage1DArray image,ivec2 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage2DArray image,ivec3 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimageCubeArray image,ivec3 P,uint compare,uint data);\nuint imageAtomicCompSwap(gimage2DMS image,ivec2 P,int sample,uint compare,uint data);\nuint imageAtomicCompSwap(gimage2DMSArray image,ivec3 P,int sample,uint compare,uint data);\nint imageAtomicCompSwap(gimage1D image,int P,int compare,int data);\nint imageAtomicCompSwap(gimage2D image,ivec2 P,int compare,int data);\nint imageAtomicCompSwap(gimage3D image,ivec3 P,int compare,int data);\nint imageAtomicCompSwap(gimage2DRect image,ivec2 P,int compare,int data);\nint imageAtomicCompSwap(gimageCube image,ivec3 P,int compare,int data);\nint imageAtomicCompSwap(gbufferImage image,int P,int compare,int data);\nint imageAtomicCompSwap(gimage1DArray image,ivec2 P,int compare,int data);\nint imageAtomicCompSwap(gimage2DArray image,ivec3 P,int compare,int data);\nint imageAtomicCompSwap(gimageCubeArray image,ivec3 P,int compare,int data);\nint imageAtomicCompSwap(gimage2DMS image,ivec2 P,int sample,int compare,int data);\nint imageAtomicCompSwap(gimage2DMSArray image,ivec3 P,int sample,int compare,int data);\n\n"
+	},
+
+	"imageAtomicExchange": {
+		"prefix": "imageAtomicExchange",
+		"body": [
+			"imageAtomicExchange(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicExchange(gimage1D image,int P,uint data);\nuint imageAtomicExchange(gimage2D image,ivec2 P,uint data);\nuint imageAtomicExchange(gimage3D image,ivec3 P,uint data);\nuint imageAtomicExchange(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicExchange(gimageCube image,ivec3 P,uint data);\nuint imageAtomicExchange(gbufferImage image,int P,uint data);\nuint imageAtomicExchange(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicExchange(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicExchange(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicExchange(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicExchange(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicExchange(gimage1D image,int P,int data);\nint imageAtomicExchange(gimage2D image,ivec2 P,int data);\nint imageAtomicExchange(gimage3D image,ivec3 P,int data);\nint imageAtomicExchange(gimage2DRect image,ivec2 P,int data);\nint imageAtomicExchange(gimageCube image,ivec3 P,int data);\nint imageAtomicExchange(gbufferImage image,int P,int data);\nint imageAtomicExchange(gimage1DArray image,ivec2 P,int data);\nint imageAtomicExchange(gimage2DArray image,ivec3 P,int data);\nint imageAtomicExchange(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicExchange(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicExchange(gimage2DMSArray image,ivec3 P,int sample,int data);\nint imageAtomicExchange(gimage1D image,int P,float data);\nint imageAtomicExchange(gimage2D image,ivec2 P,float data);\nint imageAtomicExchange(gimage3D image,ivec3 P,float data);\nint imageAtomicExchange(gimage2DRect image,ivec2 P,float data);\nint imageAtomicExchange(gimageCube image,ivec3 P,float data);\nint imageAtomicExchange(gbufferImage image,int P,float data);\nint imageAtomicExchange(gimage1DArray image,ivec2 P,float data);\nint imageAtomicExchange(gimage2DArray image,ivec3 P,float data);\nint imageAtomicExchange(gimageCubeArray image,ivec3 P,float data);\nint imageAtomicExchange(gimage2DMS image,ivec2 P,int sample,float data);\nint imageAtomicExchange(gimage2DMSArray image,ivec3 P,int sample,float data);\n\n"
+	},
+
+	"imageAtomicMax": {
+		"prefix": "imageAtomicMax",
+		"body": [
+			"imageAtomicMax(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicMax(gimage1D image,int P,uint data);\nuint imageAtomicMax(gimage2D image,ivec2 P,uint data);\nuint imageAtomicMax(gimage3D image,ivec3 P,uint data);\nuint imageAtomicMax(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicMax(gimageCube image,ivec3 P,uint data);\nuint imageAtomicMax(gbufferImage image,int P,uint data);\nuint imageAtomicMax(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicMax(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicMax(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicMax(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicMax(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicMax(gimage1D image,int P,int data);\nint imageAtomicMax(gimage2D image,ivec2 P,int data);\nint imageAtomicMax(gimage3D image,ivec3 P,int data);\nint imageAtomicMax(gimage2DRect image,ivec2 P,int data);\nint imageAtomicMax(gimageCube image,ivec3 P,int data);\nint imageAtomicMax(gbufferImage image,int P,int data);\nint imageAtomicMax(gimage1DArray image,ivec2 P,int data);\nint imageAtomicMax(gimage2DArray image,ivec3 P,int data);\nint imageAtomicMax(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicMax(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicMax(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageAtomicMin": {
+		"prefix": "imageAtomicMin",
+		"body": [
+			"imageAtomicMin(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicMin(gimage1D image,int P,uint data);\nuint imageAtomicMin(gimage2D image,ivec2 P,uint data);\nuint imageAtomicMin(gimage3D image,ivec3 P,uint data);\nuint imageAtomicMin(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicMin(gimageCube image,ivec3 P,uint data);\nuint imageAtomicMin(gbufferImage image,int P,uint data);\nuint imageAtomicMin(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicMin(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicMin(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicMin(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicMin(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicMin(gimage1D image,int P,int data);\nint imageAtomicMin(gimage2D image,ivec2 P,int data);\nint imageAtomicMin(gimage3D image,ivec3 P,int data);\nint imageAtomicMin(gimage2DRect image,ivec2 P,int data);\nint imageAtomicMin(gimageCube image,ivec3 P,int data);\nint imageAtomicMin(gbufferImage image,int P,int data);\nint imageAtomicMin(gimage1DArray image,ivec2 P,int data);\nint imageAtomicMin(gimage2DArray image,ivec3 P,int data);\nint imageAtomicMin(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicMin(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicMin(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageAtomicOr": {
+		"prefix": "imageAtomicOr",
+		"body": [
+			"imageAtomicOr(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicOr(gimage1D image,int P,uint data);\nuint imageAtomicOr(gimage2D image,ivec2 P,uint data);\nuint imageAtomicOr(gimage3D image,ivec3 P,uint data);\nuint imageAtomicOr(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicOr(gimageCube image,ivec3 P,uint data);\nuint imageAtomicOr(gbufferImage image,int P,uint data);\nuint imageAtomicOr(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicOr(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicOr(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicOr(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicOr(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicOr(gimage1D image,int P,int data);\nint imageAtomicOr(gimage2D image,ivec2 P,int data);\nint imageAtomicOr(gimage3D image,ivec3 P,int data);\nint imageAtomicOr(gimage2DRect image,ivec2 P,int data);\nint imageAtomicOr(gimageCube image,ivec3 P,int data);\nint imageAtomicOr(gbufferImage image,int P,int data);\nint imageAtomicOr(gimage1DArray image,ivec2 P,int data);\nint imageAtomicOr(gimage2DArray image,ivec3 P,int data);\nint imageAtomicOr(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicOr(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicOr(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageAtomicXor": {
+		"prefix": "imageAtomicXor",
+		"body": [
+			"imageAtomicXor(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "uint imageAtomicXor(gimage1D image,int P,uint data);\nuint imageAtomicXor(gimage2D image,ivec2 P,uint data);\nuint imageAtomicXor(gimage3D image,ivec3 P,uint data);\nuint imageAtomicXor(gimage2DRect image,ivec2 P,uint data);\nuint imageAtomicXor(gimageCube image,ivec3 P,uint data);\nuint imageAtomicXor(gbufferImage image,int P,uint data);\nuint imageAtomicXor(gimage1DArray image,ivec2 P,uint data);\nuint imageAtomicXor(gimage2DArray image,ivec3 P,uint data);\nuint imageAtomicXor(gimageCubeArray image,ivec3 P,uint data);\nuint imageAtomicXor(gimage2DMS image,ivec2 P,int sample,uint data);\nuint imageAtomicXor(gimage2DMSArray image,ivec3 P,int sample,uint data);\nint imageAtomicXor(gimage1D image,int P,int data);\nint imageAtomicXor(gimage2D image,ivec2 P,int data);\nint imageAtomicXor(gimage3D image,ivec3 P,int data);\nint imageAtomicXor(gimage2DRect image,ivec2 P,int data);\nint imageAtomicXor(gimageCube image,ivec3 P,int data);\nint imageAtomicXor(gbufferImage image,int P,int data);\nint imageAtomicXor(gimage1DArray image,ivec2 P,int data);\nint imageAtomicXor(gimage2DArray image,ivec3 P,int data);\nint imageAtomicXor(gimageCubeArray image,ivec3 P,int data);\nint imageAtomicXor(gimage2DMS image,ivec2 P,int sample,int data);\nint imageAtomicXor(gimage2DMSArray image,ivec3 P,int sample,int data);\n\n"
+	},
+
+	"imageLoad": {
+		"prefix": "imageLoad",
+		"body": [
+			"imageLoad(${1:image}, ${2:P}${3:, ${4:sample}})$5"
+		],
+		"description": "gvec4 imageLoad(gimage1D image,int P);\ngvec4 imageLoad(gimage2D image,ivec2 P);\ngvec4 imageLoad(gimage3D image,ivec3 P);\ngvec4 imageLoad(gimage2DRect image,ivec2 P);\ngvec4 imageLoad(gimageCube image,ivec3 P);\ngvec4 imageLoad(gbufferImage image,int P);\ngvec4 imageLoad(gimage1DArray image,ivec2 P);\ngvec4 imageLoad(gimage2DArray image,ivec3 P);\ngvec4 imageLoad(gimageCubeArray image,ivec3 P);\ngvec4 imageLoad(gimage2DMS image,ivec2 P,int sample);\ngvec4 imageLoad(gimage2DMSArray image,ivec3 P,int sample);\n\n"
+	},
+
+	"imageSamples": {
+		"prefix": "imageSamples",
+		"body": [
+			"imageSamples(${1:image})$2"
+		],
+		"description": "int imageSamples(gimage2DMS image);\nint imageSamples(gimage2DMSArray image);\n\n"
+	},
+
+	"imageSize": {
+		"prefix": "imageSize",
+		"body": [
+			"imageSize(${1:image})$2"
+		],
+		"description": "int imageSize(gimage1D image);\nivec2 imageSize(gimage2D image);\nivec3 imageSize(gimage3D image);\nivec2 imageSize(gimageCube image);\nivec3 imageSize(gimageCubeArray image);\nivec2 imageSize(gimageRect image);\nivec2 imageSize(gimage1DArray image);\nivec3 imageSize(gimage2DArray image);\nint imageSize(gimageBuffer image);\nivec2 imageSize(gimage2DMS image);\nivec3 imageSize(gimage2DMSArray image);\n\n"
+	},
+
+	"imageStore": {
+		"prefix": "imageStore",
+		"body": [
+			"imageStore(${1:image}, ${2:P}${3:, ${4:sample}}, ${5:data})$6"
+		],
+		"description": "void imageStore(gimage1D image,int P,gvec4 data);\nvoid imageStore(gimage2D image,ivec2 P,gvec4 data);\nvoid imageStore(gimage3D image,ivec3 P,gvec4 data);\nvoid imageStore(gimage2DRect image,ivec2 P,gvec4 data);\nvoid imageStore(gimageCube image,ivec3 P,gvec4 data);\nvoid imageStore(gbufferImage image,int P,gvec4 data);\nvoid imageStore(gimage1DArray image,ivec2 P,gvec4 data);\nvoid imageStore(gimage2DArray image,ivec3 P,gvec4 data);\nvoid imageStore(gimageCubeArray image,ivec3 P,gvec4 data);\nvoid imageStore(gimage2DMS image,ivec2 P,int sample,gvec4 data);\nvoid imageStore(gimage2DMSArray image,ivec3 P,int sample,gvec4 data);\n\n"
+	},
+
+	//Atomic 原子操作
+
+	"atomicAdd": {
+		"prefix": "atomicAdd",
+		"body": [
+			"atomicAdd(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicAdd(inout int mem,int data);\nuint atomicAdd(inout uint mem,uint data);\n\n"
+	},
+
+	"atomicAnd": {
+		"prefix": "atomicAnd",
+		"body": [
+			"atomicAnd(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicAnd(inout int mem,int data);\nuint atomicAnd(inout uint mem,uint data);\n\n"
+	},
+
+	"atomicCompSwap": {
+		"prefix": "atomicCompSwap",
+		"body": [
+			"atomicCompSwap(${1:mem}, ${2:compare}, ${3:data})$4"
+		],
+		"description": "int atomicCompSwap(inout int mem,uint compare,uint data);\nuint atomicCompSwap(inout uint mem,uint compare,uint data);\n\n"
+	},
+
+	"atomicCounter": {
+		"prefix": "atomicCounter",
+		"body": [
+			"atomicCounter(${1:c})$2"
+		],
+		"description": "uint atomicCounter(atomic_uint c);\n\n"
+	},
+
+	"atomicCounterDecrement": {
+		"prefix": "atomicCounterDecrement",
+		"body": [
+			"atomicCounterDecrement(${1:c})$2"
+		],
+		"description": "uint atomicCounterDecrement(atomic_uint c);\n\n"
+	},
+
+	"atomicCounterIncrement": {
+		"prefix": "atomicCounterIncrement",
+		"body": [
+			"atomicCounterIncrement(${1:c})$2"
+		],
+		"description": "uint atomicCounterIncrement(atomic_uint c);\n\n"
+	},
+
+	"atomicExchange": {
+		"prefix": "atomicExchange",
+		"body": [
+			"atomicExchange(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicExchange(inout int mem,int data);\nuint atomicExchange(inout uint mem,uint data);\n\n"
+	},
+
+	"atomicMax": {
+		"prefix": "atomicMax",
+		"body": [
+			"atomicMax(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicMax(inout int mem,int data);\nuint atomicMax(inout uint mem,uint data);\n\n"
+	},
+
+	"atomicMin": {
+		"prefix": "atomicMin",
+		"body": [
+			"atomicMin(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicMin(inout int mem,int data);\nuint atomicMin(inout uint mem,uint data);\n"
+	},
+
+	"atomicOr": {
+		"prefix": "atomicOr",
+		"body": [
+			"atomicOr(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicOr(inout int mem,int data);\nuint atomicOr(inout uint mem,uint data);\n\n"
+	},
+
+	"atomicXor": {
+		"prefix": "atomicXor",
+		"body": [
+			"atomicXor(${1:mem}, ${2:data})$3"
+		],
+		"description": "int atomicXor(inout int mem,int data);\nuint atomicXor(inout uint mem,uint data);\n\n"
+	},
+
+	//Memory Barrier 内存屏障/屏障指令
+
+	"barrier": {
+		"prefix": "barrier",
+		"body": [
+			"barrier()$1"
+		],
+		"description": "void barrier(void);\n\n"
+	},
+
+	"groupMemoryBarrier": {
+		"prefix": "groupMemoryBarrier",
+		"body": [
+			"groupMemoryBarrier()$1"
+		],
+		"description": "void groupMemoryBarrier(void);\n\n等待计算着色器调用执行的所有内存访问完成,将对于同一工作组中其它调用执行的相同访问,然后返回没有其他效果\n\n"
+	},
+
+	"memoryBarrier": {
+		"prefix": "memoryBarrier",
+		"body": [
+			"memoryBarrier()$1"
+		],
+		"description": "void memoryBarrier(void);\n\n"
+	},
+
+	"memoryBarrierAtomicCounter": {
+		"prefix": "memoryBarrierAtomicCounter",
+		"body": [
+			"memoryBarrierAtomicCounter()$1"
+		],
+		"description": "void memoryBarrierAtomicCounter(void);\n\n"
+	},
+
+	"memoryBarrierBuffer": {
+		"prefix": "memoryBarrierBuffer",
+		"body": [
+			"memoryBarrierBuffer()$1"
+		],
+		"description": "void memoryBarrierBuffer(void);\n\n"
+	},
+
+	"memoryBarrierImage": {
+		"prefix": "memoryBarrierImage",
+		"body": [
+			"memoryBarrierImage()$1"
+		],
+		"description": "void memoryBarrierImage(void);\n\n"
+	},
+
+	"memoryBarrierShared": {
+		"prefix": "memoryBarrierShared",
+		"body": [
+			"memoryBarrierShared()$1"
+		],
+		"description": "void memoryBarrierShared(void);\n\n"
+	},
+
+	//预处理
+
+	"#version": {
+		"prefix": "#version",
+		"body": [
+			"#version ${1:ver}"
+		],
+		"description": "可选值:\n#version 110          // GLSL 1.1         OpenGL 2.0  【默认】\n#version 120          // GLSL 1.2         OpenGL 2.1\n#version 130          // GLSL 1.3         OpenGL 3.0\n#version 140          // GLSL 1.4         OpenGL 3.1\n#version 150          // GLSL 1.5         OpenGL 3.2\n#version 330          // GLSL 3.3         OpenGL 3.3\n#version 330 core     // GLSL 3.3核心模式   OpenGL 3.3\n#version 400          // GLSL 4.0         OpenGL 4.0\n#version 410          // GLSL 4.1         OpenGL 4.1\n#version 420          // GLSL 4.2         OpenGL 4.2\n#version 430          // GLSL 4.3         OpenGL 4.3\n#version 440          // GLSL 4.4         OpenGL 4.4\n#version 450          // GLSL 4.5         OpenGL 4.5\n#version 460          // GLSL 4.6         OpenGL 4.6\n\n#version 150 compatibility // GLSL 1.5 并向前兼容GLSL 1.2、1.3、1.4的语法\n\n#version 300 es // GLSL ES 3.0 或称 ESSL 3.0   注:声明为这个后,宏GL_ES会被定义为1\n\n"
+	},
+
+	"#extension": {
+		"prefix": "#extension",
+		"body": [
+			"#extension  ${1:extname} : ${2:behaivor}"
+		],
+		"description": "extname为编译器支持的扩展名称\nbehaivor可以是require、enable、warn、disable\n   require  扩展是必需的。若当前扩展不受支持,将抛出错误\n   enable  启用扩展。若当前扩展不支持,将抛出警告\n   warn  对于扩展的任何使用均抛出警告\n   disable  禁用扩展。若当前扩展被使用,将抛出错误\n\n"
+	},
+
+	"#if": {
+		"prefix": "#if ",
+		"body": [
+			"#if"
+		],
 		"description": ""
+	},
+
+	"#elif": {
+		"prefix": "#elif ",
+		"body": [
+			"#elif"
+		],
+		"description": ""
+	},
+
+	"#else": {
+		"prefix": "#else ",
+		"body": [
+			"#else"
+		],
+		"description": ""
+	},
+
+	"#ifdef": {
+		"prefix": "#ifdef ",
+		"body": [
+			"#ifdef "
+		],
+		"description": ""
+	},
+
+	"#ifndef": {
+		"prefix": "#ifndef ",
+		"body": [
+			"#ifndef "
+		],
+		"description": ""
+	},
+
+	"#endif": {
+		"prefix": "#endif",
+		"body": [
+			"#endif"
+		],
+		"description": ""
+	},
+
+	"#define": {
+		"prefix": "#define ${1:def}",
+		"body": [
+			"#define "
+		],
+		"description": "宏定义\n\n"
+	},
+
+	"#undef": {
+		"prefix": "#undef ${1:def}",
+		"body": [
+			"#undef"
+		],
+		"description": "宏取消\n\n"
+	},
+
+	"#line": {
+		"prefix": "#line",
+		"body": [
+			"#line ${1:lineNum} ${2:ID}"
+		],
+		"description": "指示下一行的行号,及当前所在的文件;该命令会修改__FILE__、__LINE__的值\n\n该命令是提供给编译器使用的,程序员最好不要使用该命令\n\n"
+	},
+
+	"#pragma": {
+		"prefix": "#pragma",
+		"body": [
+			"#pragma ${1:p}"
+		],
+		"description": "用来控制编译器的一些行为\n\n#pragma optimize(on) // 开启编译器优化 【默认】\n#pragma optimize(off) // 关闭编译器优化\n#pragma debug(on)  // 开启debug选项,以获得更多的调试信息\n#pragma debug(off) // 关闭debug选项 【默认】\n\n#pragma STDGL invariant(all)  // 让所有的变量全都不变\n\n注:因为编译器需要保证不变性,所以会限制对着色器进行优化\n\n"
+	},
+
+	"#error": {
+		"prefix": "#error",
+		"body": [
+			"#error ${1:info}"
+		],
+		"description": "error命令被执行,会导致当前文件编译失败\n\n"
+	},
+
+	"__VERSION__": {
+		"prefix": "_version_",
+		"body": [
+			"__VERSION__ "
+		],
+		"description": "__VERSION__为内置宏,int类型,为当前GLSL文件的版本号\n\n"
+	},
+
+	"__FILE__": {
+		"prefix": "_file_",
+		"body": [
+			"__FILE__ "
+		],
+		"description": "宏__FILE__为int类型,当前Source String的唯一ID标识\n\n"
+	},
+
+	"__LINE__": {
+		"prefix": "_line_",
+		"body": [
+			"__LINE__ "
+		],
+		"description": "宏__LINE__为int类型,当前的行号\n\n"
+	},
+
+	"GL_ES": {
+		"prefix": "GL_ES",
+		"body": [
+			"GL_ES"
+		],
+		"description": "OpenGL下,内置宏GL_ES未定义,条件不成立;openGL es下,GL_ES为1,条件成立\n\n"
+	},
+
+	"GL_FRAGMENT_PRECISION_HIGH": {
+		"prefix": "GL_FRAGMENT_PRECISION_HIGH",
+		"body": [
+			"GL_FRAGMENT_PRECISION_HIGH"
+		],
+		"description": "若当前片元着色器支持高浮点精度,则宏GL_FRAGMENT_PRECISION_HIGH为1\n\n"
+	},
+
+	"precision": {
+		"prefix": "precision",
+		"body": [
+			"precision ${1|highp,mediump,lowp|} ${2:type}"
+		],
+		"description": "设置type的精度为p\np有三种:\n  highp - 高精度\n  mediump - 中精度\n  lowp - 低精度\n\n"
+	},
+
+	"highp": {
+		"prefix": "highp",
+		"body": [
+			"highp"
+		],
+		"description": "vs的最低精度\n注:在某些webgl环境中,fs可能不支持highp精度,如果支持的话,会定义内置宏GL_FRAGMENT_PRECISION_HIGH\n\nfloat数值范围和精度:\n  范围:(-2^62~2^62)\n  精度:2^-16\n\nint数值范围:(-2^16~2^16)\n\n"
+	},
+
+	"mediump": {
+		"prefix": "mediump",
+		"body": [
+			"mediump"
+		],
+		"description": "fs的最低精度\n\nfloat数值范围和精度:\n  范围:(-2^14~2^14)\n  精度:2^-10\n\nint数值范围:(-2^10~2^10)\n\n"
+	},
+
+	"lowp": {
+		"prefix": "lowp",
+		"body": [
+			"lowp"
+		],
+		"description": "可以表示所有的颜色\n\nfloat数值范围和精度:\n  范围:(-2~2)\n  精度:2^-8\n\nint数值范围:(-2^8~2^8)\n\n"
+	},
+
+	"layout-location": {
+		"prefix": "layout-location",
+		"body": [
+			"layout (location = ${1:0}) "
+		],
+		"description": ""
+	},
+
+	"layout": {
+		"prefix": "layout",
+		"body": [
+			"layout (${1:lay}) "
+		],
+		"description": "lay可选值:\n  shared(默认)  多个着色器程序间共享。可省略不写\n  packed  最小内存占用,无法在多个着色器程序间共享\n  std140  标准内存布局\n  column_major(默认)  矩阵变量以列优先顺序。可省略不写\n  row_major  矩阵变量以行优先顺序\n\n"
+	},
+
+	"shared": {
+		"prefix": "shared",
+		"body": [
+			"shared"
+		],
+		"description": ""
+	},
+
+	"packed": {
+		"prefix": "packed",
+		"body": [
+			"packed"
+		],
+		"description": ""
+	},
+
+	"std140": {
+		"prefix": "std140",
+		"body": [
+			"std140"
+		],
+		"description": ""
+	},
+
+	"column_major": {
+		"prefix": "column_major",
+		"body": [
+			"column_major"
+		],
+		"description": ""
+	},
+
+	"row_major": {
+		"prefix": "row_major",
+		"body": [
+			"row_major"
+		],
+		"description": ""
+	},
+
+	"uniform": {
+		"prefix": "uniform",
+		"body": [
+			"uniform "
+		],
+		"description": "是只读的,与顶点和像素无关的输入型变量,被用来表示非逐顶点、非逐像素、各顶点、各像素共用的信息,必须声明为全局变量,可在vs和fs中使用\n可以是除了数组或结构体之外的任意类型。如果vs和fs中声明了同名的统一变量(uniform变量),那么它就会被两种着色器共享\n\n"
+	},
+
+	"in": {
+		"prefix": "in",
+		"body": [
+			"in "
+		],
+		"description": ""
+	},
+
+	"out": {
+		"prefix": "out",
+		"body": [
+			"out "
+		],
+		"description": ""
+	},
+
+	"inout": {
+		"prefix": "inout",
+		"body": [
+			"inout "
+		],
+		"description": ""
+	},
+
+	"invariant": {
+		"prefix": "invariant",
+		"body": [
+			"invariant "
+		],
+		"description": "为了保证不变性,GLSL引入了invariant关键字来修饰顶点输出变量。\n主要的原因是,为了优化,编译器可能对shader指令重新排序,可能导致2个着色器之间的等价计算不能保证产生完全相同的结果。特别是在进行多遍渲染时,尤其可能成为问题。\n例如:fs中第一遍中计算镜面反射光,第二遍计算环境光和漫反射光,顶点输出变量如果不使用invariant关键字,精度带来的小误差会导致深度冲突(Z fighting)。\ninvariant关键字既可用于声明变量,也可以用于已经声明过的变量。\n\ninvariant vec2 texCoord; // 用于声明变量\ninvariant gl_Position;  // 用于已经声明过的变量\n#pragma STDGL invariant(all)  // 让所有的变量全都不变   注：因为编译器需要保证不变性，所以会限制对着色器进行优化\n\n"
+	},
+
+	"smooth": {
+		"prefix": "smooth",
+		"body": [
+			"smooth "
+		],
+		"description": "平滑着色\n\n/*** vs ***/\nsmooth out vec3 v_color;  // smooth可省略不写\n\n/*** fs ***/\nsmooth in vec3 v_color;  // smooth可省略不写\n\n"
+	},
+
+	"flat": {
+		"prefix": "flat",
+		"body": [
+			"flat "
+		],
+		"description": "平面着色\n\n/*** vs ***/\nflat out vec3 v_color;\n\n/*** fs ***/\nflat in vec3 v_color;\n\n"
+	},
+
+	"centroid": {
+		"prefix": "centroid",
+		"body": [
+			"centroid "
+		],
+		"description": "质心采样(centroid sampling)\n使用多重采样渲染时,centroid可用于强制插值发生在被渲染图元内部\n这可防止图元的边缘出现伪像\n\n/*** vs ***/\ncentroid out vec3 v_color;\n\n/*** fs ***/\ncentroid in vec3 v_color;\n\n"
+	},
+
+	"struct": {
+		"prefix": "struct",
+		"body": [
+			"struct ${1:name}{",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"const": {
+		"prefix": "const",
+		"body": [
+			"const "
+		],
+		"description": ""
+	},
+
+	"attritude": {
+		"prefix": "attritude",
+		"body": [
+			"attritude "
+		],
+		"description": ""
+	},
+
+	"varying": {
+		"prefix": "varying",
+		"body": [
+			"varying "
+		],
+		"description": ""
+	},
+
+	//数据类型
+
+	"void": {
+		"prefix": "void",
+		"body": [
+			"void "
+		],
+		"description": ""
+	},
+
+	"int": {
+		"prefix": "int",
+		"body": [
+			"int "
+		],
+		"description": "整形\n\n"
+	},
+
+	"float": {
+		"prefix": "float",
+		"body": [
+			"float "
+		],
+		"description": "单精度浮点\n\n"
+	},
+
+	"double": {
+		"prefix": "double",
+		"body": [
+			"double "
+		],
+		"description": "双精度浮点\n\n"
+	},
+
+	"bool": {
+		"prefix": "bool",
+		"body": [
+			"bool "
+		],
+		"description": "布尔\n\n"
+	},
+
+	"uint": {
+		"prefix": "uint",
+		"body": [
+			"uint "
+		],
+		"description": "无符号整形\n\n"
+	},
+
+	"vec": {
+		"prefix": "vec",
+		"body": [
+			"vec${1|1,2,3,4|} "
+		],
+		"description": "float向量\n\n"
+	},
+
+	"bvec": {
+		"prefix": "bvec",
+		"body": [
+			"bvec${1|1,2,3,4|} "
+		],
+		"description": "bool向量\n\n"
+	},
+
+	"uvec": {
+		"prefix": "uvec",
+		"body": [
+			"uvec${1|1,2,3,4|} "
+		],
+		"description": "无符号整型向量\n\n"
+	},
+
+	"ivec": {
+		"prefix": "ivec",
+		"body": [
+			"ivec${1|1,2,3,4|} "
+		],
+		"description": "整型向量\n\n"
+	},
+
+	"mat": {
+		"prefix": "mat",
+		"body": [
+			"mat${1|2,2x3,2x4,3x2,3,3x4,4x2,4x3,4|} "
+		],
+		"description": "矩阵,分量类型均为float\n\n"
+	},
+
+	//浮点采样器(不透明)
+
+	"sampler1D": {
+		"prefix": "sampler1D",
+		"body": [
+			"sampler1D "
+		],
+		"description": "1D纹理\n\n"
+	},
+
+	"sampler2D": {
+		"prefix": "sampler2D",
+		"body": [
+			"sampler2D "
+		],
+		"description": "2D纹理\n\n"
+	},
+
+	"sampler3D": {
+		"prefix": "sampler3D",
+		"body": [
+			"sampler3D "
+		],
+		"description": "3D纹理\n\n"
+	},
+
+	"samplerCube": {
+		"prefix": "samplerCube",
+		"body": [
+			"samplerCube "
+		],
+		"description": "立方图纹理\n\n"
+	},
+
+	"samplerCubeShadow": {
+		"prefix": "samplerCubeShadow",
+		"body": [
+			"samplerCubeShadow "
+		],
+		"description": "带有对比的立方图深度纹理\n\n"
+	},
+
+	"sampler1DShadow": {
+		"prefix": "sampler1DShadow",
+		"body": [
+			"sampler1DShadow "
+		],
+		"description": "带有对比的1D深度纹理\n\n"
+	},
+
+	"sampler1DArray": {
+		"prefix": "sampler1DArray",
+		"body": [
+			"sampler1DArray "
+		],
+		"description": "1D数组纹理\n\n"
+	},
+	"sampler1DArrayShadow": {
+		"prefix": "sampler1DArrayShadow",
+		"body": [
+			"sampler1DArrayShadow "
+		],
+		"description": "带有对比的1D数组深度纹理\n\n"
+	},
+
+	"sampler2DShadow": {
+		"prefix": "sampler2DShadow",
+		"body": [
+			"sampler2DShadow "
+		],
+		"description": "带有对比的2D深度纹理\n\n"
+	},
+
+	"sampler2DArray": {
+		"prefix": "sampler2DArray",
+		"body": [
+			"sampler2DArray "
+		],
+		"description": "2D数组纹理\n\n"
+	},
+
+	"sampler2DArrayShadow": {
+		"prefix": "sampler2DArrayShadow",
+		"body": [
+			"sampler2DArrayShadow "
+		],
+		"description": "带有对比的2D数组深度纹理\n\n"
+	},
+
+	//有符号整数采样器(不透明)
+
+	"isampler1D": {
+		"prefix": "isampler1D",
+		"body": [
+			"isampler1D "
+		],
+		"description": "有符号整数1D纹理\n\n"
+	},
+
+	"isampler2D": {
+		"prefix": "isampler2D",
+		"body": [
+			"isampler2D "
+		],
+		"description": "有符号整数2D纹理\n\n"
+	},
+
+	"isampler3D": {
+		"prefix": "isampler3D",
+		"body": [
+			"isampler3D "
+		],
+		"description": "有符号整数3D纹理\n\n"
+	},
+
+	"isamplerCube": {
+		"prefix": "isamplerCube",
+		"body": [
+			"isamplerCube "
+		],
+		"description": "有符号整数立方图纹理\n\n"
+	},
+
+	"isampler1DArray": {
+		"prefix": "isampler1DArray",
+		"body": [
+			"isampler1DArray "
+		],
+		"description": "有符号整数1D数组纹理\n\n"
+	},
+
+	"isampler2DArray": {
+		"prefix": "isampler2DArray",
+		"body": [
+			"isampler2DArray "
+		],
+		"description": "有符号整数2D数组纹理\n\n"
+	},
+
+	//无符号整数采样器(不透明)
+
+	"usampler1D": {
+		"prefix": "usampler1D",
+		"body": [
+			"usampler1D "
+		],
+		"description": "无符号整数1D纹理\n\n"
+	},
+
+	"usampler2D": {
+		"prefix": "usampler2D",
+		"body": [
+			"usampler2D "
+		],
+		"description": "无符号整数2D纹理\n\n"
+	},
+
+	"usampler3D": {
+		"prefix": "usampler3D",
+		"body": [
+			"usampler3D "
+		],
+		"description": "无符号整数3D纹理\n\n"
+	},
+
+	"usamplerCube": {
+		"prefix": "usamplerCube",
+		"body": [
+			"usamplerCube "
+		],
+		"description": "无符号整数立方图纹理\n\n"
+	},
+
+	"usampler1DArray": {
+		"prefix": "usampler1DArray",
+		"body": [
+			"usampler1DArray "
+		],
+		"description": "无符号整数1D数组纹理\n\n"
+	},
+
+	"usampler2DArray": {
+		"prefix": "usampler2DArray",
+		"body": [
+			"usampler2DArray "
+		],
+		"description": "无符号整数2D数组纹理\n\n"
+	},
+
+	//流程控制
+
+	"for": {
+		"prefix": "for",
+		"body": [
+			"for(int ${1:i} = 0, ${1:i} < ${2:n}, ${1:i}++){",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"while": {
+		"prefix": "while",
+		"body": [
+			"while(${1:condition}){",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"dowhile": {
+		"prefix": "dowhile",
+		"body": [
+			"do{",
+			"\t$0",
+			"}while(${1:condition});"
+		],
+		"description": ""
+	},
+
+	"continue": {
+		"prefix": "continue",
+		"body": [
+			"continue;"
+		],
+		"description": ""
+	},
+
+	"break": {
+		"prefix": "break",
+		"body": [
+			"break;"
+		],
+		"description": ""
+	},
+
+	"discard": {
+		"prefix": "discard",
+		"body": [
+			"discard;"
+		],
+		"description": "该关键字只能在fs中使用,表示放弃当前片元,直接处理下一个片元。\n\n"
+	},
+
+	"if": {
+		"prefix": "if",
+		"body": [
+			"if(${1:condition}){",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"else": {
+		"prefix": "else",
+		"body": [
+			"else{",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"elseif": {
+		"prefix": "elseif",
+		"body": [
+			"else if(${1:condition}){",
+			"\t$0",
+			"}"
+		],
+		"description": ""
+	},
+
+	"return": {
+		"prefix": "return",
+		"body": [
+			"return "
+		],
+		"description": ""
+	},
+
+	"switch": {
+		"prefix": "switch",
+		"body": [
+			"switch(${1:int}){",
+			"\t$0",
+			"",
+			"\tdefault:",
+			"\t\t${2:exp}"
+		],
+		"description": ""
+	},
+
+	"case": {
+		"prefix": "case",
+		"body": [
+			"case ${1:int}:",
+			"\t$0",
+			"\tbreak;"
+		],
+		"description": "\n\n"
+	},
+
+	//costume 自定义片段
+
+	"PI": {
+		"prefix": "PI",
+		"body": [
+			"const float PI = 3.14159265359;"
+		],
+		"description": "PI setup"
+	},
+
+	"ifdef": {
+		"prefix": "ifdef",
+		"body": [
+			"#ifdef GL_ES",
+			"precision mediump float;",
+			"#endif"
+		],
+		"description": "A check defining if GLES is available"
+	},
+
+	"ifdef-extension": {
+		"prefix": "ifdef-extension",
+		"body": [
+			"#ifdef GL_OES_standard_derivatives",
+				"#extension GL_OES_standard_derivatives : enable",
+			"#endif"
+		],
+		"description": "扩展,启用fwidth等函数"
+	},
+
+	"simple setup": {
+		"prefix": "simple setup",
+		"body": [
+			"#ifdef GL_ES",
+			"precision mediump float;",
+			"#endif",
+			"",
+			"uniform float u_time;",
+			"uniform vec2 u_resolution;",
+			"uniform vec2 u_mouse;",
+			"",
+			"vec2 fixUV(){",
+			"\tvec2 st = (gl_FragCoord.xy - u_resolution * 0.5) / min(u_resolution.x, u_resolution.y) * 1.0;",
+			"",
+			"\treturn st;",
+			"}",
+			"",
+			"void main(){",
+			"\tvec2 uv = fixUV();",
+			"\tvec3 color = vec3(0.0, 1.0, 1.0);",
+			"",
+			"\tgl_FragColor = vec4(color, 1.0);",
+			"}"
+		],
+		"description": "Starter code including 'ifdef' check, u_ methods & the main"
 	},
 
 	"": {
@@ -1207,158 +2365,7 @@
 		"body": [
 			""
 		],
-		"description": ""
-	},
+		"description": "\n\n"
+	}
 
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
-
-	"": {
-		"prefix": "",
-		"body": [
-			""
-		],
-		"description": ""
-	},
 }
